@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./assets/scss/admin.scss"],"names":[],"mappings":"AAAA;AACA,aAAa","file":"css/admin.css","sourcesContent":["table.shanyue-page-sections tr td:first-child {\n  width: 30%; }\n"],"sourceRoot":""}

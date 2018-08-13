@@ -1,0 +1,7 @@
+.idea/
+.DS_Store
+node_modules/
+wp-admin/
+wp-includes/
+dist/
+npm-debug.log

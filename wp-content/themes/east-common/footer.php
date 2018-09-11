@@ -19,11 +19,21 @@
         $feature_args = array(
             'post_type' => 'shanyue-p-sections',
             'meta_key' => '_group_slug',
-            'meta_value' => 'footer-common',
+            'meta_value' => 'footer-common_' . get_locale(),
             'orderby' => 'menu-order',
             'order' => 'asc'
         );
         $feature_query = new   wp_Query($feature_args);
+        if (!$feature_query->have_posts()) {
+            $feature_args = array(
+                'post_type' => 'shanyue-p-sections',
+                'meta_key' => '_group_slug',
+                'meta_value' => 'footer-common',
+                'orderby' => 'menu-order',
+                'order' => 'asc'
+            );
+            $feature_query = new wp_Query($feature_args);
+        }
         if ($feature_query->have_posts()) {
             $feature_query->the_post();
             the_content();

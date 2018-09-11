@@ -102,7 +102,8 @@ echo '</tr><tr>';
 echo '<td>' . __( 'Page Belong', 'shanyue' ) . ':</td><td>';
 wp_dropdown_pages( array(
 	'selected' => $ps_page_belong,
-	'name'     => 'shanyue_page_sections[pageBelong]'
+	'name'     => 'shanyue_page_sections[pageBelong]',
+    'show_option_none'     => 'Choose page below'
 ) );
 echo '</td>';
 echo '</tr><tr>';
@@ -146,7 +147,8 @@ echo '<td>' . __( 'File Link', 'shanyue' ) . ':</td><td>'
 	echo '<td>' . __( 'Page Related', 'shanyue' ) . ':</td><td>';
 	wp_dropdown_pages( array(
 		'selected' => $ps_page_related,
-		'name'     => 'shanyue_page_sections[pageRelated]'
+		'name'     => 'shanyue_page_sections[pageRelated]',
+        'show_option_none'     => 'Choose page below'
 	) );
 	echo '</td></tr><tr>';
 	echo '<td>' . __( 'Group Slug', 'shanyue' ) . ':</td><td><input type="text" name="group_slug" value="' . esc_attr( $ps_group_slug ) . '" size="50"></td>';

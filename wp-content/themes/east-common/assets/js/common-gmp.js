@@ -97,7 +97,12 @@ $(document).ready(function () {
             element.style.display = 'none'
         })
     })
-    if (bodyId.indexOf('index')>-1) {
+    if (bodyId.indexOf('about') > -1) {
+        $('html, body').animate({
+            scrollTop: $("section.content-section.about-us").offset().top - 139
+        }, 1000);
+    }
+    if (bodyId.indexOf('index') > -1 || bodyId.indexOf('about') > -1) {
         var element1 = document.querySelector('.content-section.animate1')
         var elementWatcher1 = scrollMonitor.create(element1);
         elementWatcher1.stateChange(function () {
@@ -114,17 +119,8 @@ $(document).ready(function () {
                 $(e).toggleClass('fadeInUp', this.isInViewport);
             });
         })
-        if (window.location.hash && window.location.hash.indexOf('about-us') > -1) {
-            $('html, body').animate({
-                scrollTop: $("section.content-section.about-us").offset().top - 139
-            }, 1000);
-        }
-        $('nav.navbar-default ul li.about-li').on('click', function () {
-            $('html, body').animate({
-                scrollTop: $("section.content-section.about-us").offset().top - 139
-            }, 1000);
-        });
-    } else if (bodyId.indexOf('layouts')>-1) {
+
+    } else if (bodyId.indexOf('layouts') > -1) {
         $('.general img.general-img').maphilight()
         var flagOpened = false
         var minWidth = 760
@@ -132,7 +128,7 @@ $(document).ready(function () {
         var unavailableLabel = 'Unavailable:'
         var sizeLabel = 'Size:'
         var roomsLabel = 'Rooms:'
-        if ($("body").hasClass("layout-mg")) {
+        if ($("body").indexOf("layouts-mg") > 0) {
             availableLabel = 'Захиалах боломжтой:'
             unavailableLabel = 'Захиалах боломжгүй:'
             sizeLabel = 'Талбайн хэмжээ:'

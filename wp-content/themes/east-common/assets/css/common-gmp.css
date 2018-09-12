@@ -252,8 +252,8 @@ th {
     border: 1px solid #ddd !important; } }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("../assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
-  src: url("../assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+  src: url("../fonts/glyphicons-halflings-regular.eot");
+  src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 .glyphicon {
   position: relative;
   top: 1px;
@@ -5995,9 +5995,11 @@ div.header {
               display: none;
               z-index: 10;
               background: rgba(35, 31, 32, 0.8);
+              list-style: none;
               margin-top: 0px;
               padding: 10px 15px 2px; }
               div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li {
+                text-align: left;
                 margin-bottom: 5px; }
                 div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li a {
                   color: #ccc;
@@ -6009,6 +6011,11 @@ div.header {
                   background: transparent;
                   color: #fff;
                   border-bottom: 1px solid #fff; }
+            div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li.menu-item-has-children > a:after, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li.menu-item-has-children > a:after {
+              font-family: "Glyphicons Halflings";
+              content: "\e252";
+              margin-left: 3px;
+              font-size: 11px; }
   div.header.navbar-scroll-down {
     height: 0;
     padding: 0;
@@ -6160,35 +6167,35 @@ footer .site-info {
 header.entry-header {
   display: none; }
 
-body[id^='index'] .content-section .row .col {
+body[id^='index'] .content-section .row .col, body[id^='about'] .content-section .row .col {
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   animation-delay: .3s;
   -webkit-animation-delay: .3s; }
-body[id^='index'] .content-section.animate1 .row {
+body[id^='index'] .content-section.animate1 .row, body[id^='about'] .content-section.animate1 .row {
   margin-left: 0;
   margin-right: 0; }
-  body[id^='index'] .content-section.animate1 .row .col {
+  body[id^='index'] .content-section.animate1 .row .col, body[id^='about'] .content-section.animate1 .row .col {
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
     padding-right: 0;
     padding-left: 0; }
-    body[id^='index'] .content-section.animate1 .row .col:last-child {
+    body[id^='index'] .content-section.animate1 .row .col:last-child, body[id^='about'] .content-section.animate1 .row .col:last-child {
       -webkit-transform: translate3d(100%, 0, 0);
       transform: translate3d(100%, 0, 0); }
-body[id^='index'] .content-section.animate2 .row {
+body[id^='index'] .content-section.animate2 .row, body[id^='about'] .content-section.animate2 .row {
   margin-left: 0;
   margin-right: 0;
   padding-top: 20px; }
-  body[id^='index'] .content-section.animate2 .row .col {
+  body[id^='index'] .content-section.animate2 .row .col, body[id^='about'] .content-section.animate2 .row .col {
     transition: all .3s linear;
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
     padding-left: 0;
     padding-right: 0; }
-    body[id^='index'] .content-section.animate2 .row .col:hover, body[id^='index'] .content-section.animate2 .row .col:active {
+    body[id^='index'] .content-section.animate2 .row .col:hover, body[id^='index'] .content-section.animate2 .row .col:active, body[id^='about'] .content-section.animate2 .row .col:hover, body[id^='about'] .content-section.animate2 .row .col:active {
       margin-top: -20px; }
 
 body[id^='location-map'] .content-section img {
@@ -6206,7 +6213,7 @@ body[id^='location-photos'] .content-section, body[id^='value-brands'] .content-
       width: 100%; }
     body[id^='location-photos'] .content-section.section1 .col p, body[id^='location-photos'] .content-section.section2 .col p, body[id^='value-brands'] .content-section.section1 .col p, body[id^='value-brands'] .content-section.section2 .col p {
       color: #fff; }
-  body[id^='location-photos'] .content-section.section1 .col p, body[id^='value-brands'] .content-section.section1 .col p {
+  body[id^='location-photos'] .content-section.section1 .col p:last-child, body[id^='value-brands'] .content-section.section1 .col p:last-child {
     padding: 5px 0;
     margin-bottom: 35px;
     text-align: center;
@@ -6229,18 +6236,19 @@ body[id^='location-photos'] .content-section.section2.section1 .col p {
 body[id^='location-photos'] .content-section.section2.section2 .col {
   margin-bottom: 15px; }
   body[id^='location-photos'] .content-section.section2.section2 .col p {
+    margin-bottom: 0; }
+  body[id^='location-photos'] .content-section.section2.section2 .col p:last-child {
     display: flex;
     align-items: center;
     position: absolute;
     bottom: 0;
-    margin-bottom: 0;
     left: 8px;
     right: 8px;
     padding: 10px 10px 10px 20px;
     text-align: left;
     color: #fff;
     background: rgba(88, 89, 91, 0.7); }
-    body[id^='location-photos'] .content-section.section2.section2 .col p img {
+    body[id^='location-photos'] .content-section.section2.section2 .col p:last-child img {
       height: 34px;
       width: auto;
       margin-right: 10px; }
@@ -6250,7 +6258,7 @@ body[id^='value-brands'] .content-section.section1 .col {
   body[id^='value-brands'] .content-section.section1 .col img {
     width: 80%;
     margin-bottom: 10px; }
-  body[id^='value-brands'] .content-section.section1 .col p {
+  body[id^='value-brands'] .content-section.section1 .col p:last-child {
     padding: 10px 0; }
 
 body[id^='design'] .content-section {
@@ -6333,15 +6341,18 @@ body[id^='design'] .mask.big-img {
     cursor: pointer;
     z-index: 1; }
 
-body[id^='design-penthouse'] .content-section {
+body[id^='design-penthouse'] .content-section.section1 {
   font-family: "AxiaLight Regular"; }
-  body[id^='design-penthouse'] .content-section .row {
+  body[id^='design-penthouse'] .content-section.section1 .row {
     display: flex; }
-    body[id^='design-penthouse'] .content-section .row .col:last-child {
+    body[id^='design-penthouse'] .content-section.section1 .row .col:last-child {
       display: flex;
       text-align: right;
       justify-content: flex-end;
       flex-flow: column; }
+      body[id^='design-penthouse'] .content-section.section1 .row .col:last-child h3 {
+        width: 100%;
+        font-weight: bold; }
 
 body[id^='contact'] .content-section {
   font-family: "AxiaLight Regular"; }

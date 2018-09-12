@@ -1,4 +1,4 @@
-$icon-font-path: "../assets/fonts/bootstrap/" !default;
+$icon-font-path: "../fonts/" !default;
 $brand-primary: #811b22 !default;
 $title-color: #231f20 !default;
 $text-color: #58595b !default;
@@ -243,7 +243,9 @@ div.header {
               display: none;
               z-index: 10;
               background: transparentize($title-color, .2);
+              list-style: none;
               li {
+                text-align: left;
                 a {
                   color: #ccc;
                   font-size: 1.1rem;
@@ -262,6 +264,14 @@ div.header {
               }
               margin-top: 0px;
               padding: 10px 15px 2px;
+            }
+            &.menu-item-has-children {
+              > a:after {
+                font-family: "Glyphicons Halflings";
+                content: "\e252";
+                margin-left: 3px;
+                font-size: 11px;
+              }
             }
           }
 
@@ -466,7 +476,7 @@ header.entry-header {
   display: none;
 }
 
-body[id^='index'] {
+body[id^='index'], body[id^='about'] {
   .content-section {
     .row {
       .col {
@@ -542,7 +552,7 @@ body[id^='location-photos'], body[id^='value-brands'] {
     }
     &.section1 {
       .col {
-        p {
+        p:last-child {
           padding: 5px 0;
           margin-bottom: 35px;
           text-align: center;
@@ -581,11 +591,13 @@ body[id^='location-photos'] {
       .col {
         margin-bottom: 15px;
         p {
+          margin-bottom: 0;
+        }
+        p:last-child {
           display: flex;
           align-items: center;
           position: absolute;
           bottom: 0;
-          margin-bottom: 0;
           left: 8px;
           right: 8px;
           padding: 10px 10px 10px 20px;
@@ -612,7 +624,7 @@ body[id^='value-brands'] {
         width: 80%;
         margin-bottom: 10px;
       }
-      p {
+      p:last-child {
         padding: 10px 0;
       }
     }
@@ -738,7 +750,7 @@ body[id^='design'] {
 }
 
 body[id^='design-penthouse'] {
-  .content-section {
+  .content-section.section1 {
     font-family: "AxiaLight Regular";
     .row {
       display: flex;
@@ -747,6 +759,10 @@ body[id^='design-penthouse'] {
         text-align: right;
         justify-content: flex-end;
         flex-flow: column;
+        h3 {
+          width: 100%;
+          font-weight: bold;
+        }
       }
     }
   }

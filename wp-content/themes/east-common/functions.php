@@ -131,6 +131,7 @@ function east_common_scripts()
     wp_enqueue_style('east-animate-style', get_template_directory_uri() . '/assets/css/animate.min.css');
     wp_enqueue_style('east-swiper-style', get_template_directory_uri() . '/assets/css/swiper.min.css');
     wp_enqueue_style('east-flexslider-style', get_template_directory_uri() . '/assets/css/flexslider.css');
+
     if (!empty($east_common_site_id)) {
         wp_enqueue_style('east-' . $east_common_site_id . '-style', get_template_directory_uri() . '/assets/css/common-' . $east_common_site_id . '.css');
     }

@@ -6214,7 +6214,7 @@ body[id^='location-photos'] .content-section, body[id^='value-brands'] .content-
     body[id^='location-photos'] .content-section.section1 .col p, body[id^='location-photos'] .content-section.section2 .col p, body[id^='value-brands'] .content-section.section1 .col p, body[id^='value-brands'] .content-section.section2 .col p {
       color: #fff; }
   body[id^='location-photos'] .content-section.section1 .col p:last-child, body[id^='value-brands'] .content-section.section1 .col p:last-child {
-    padding: 5px 0;
+    padding: 0 0 5px;
     margin-bottom: 35px;
     text-align: center;
     color: #fff;
@@ -6228,7 +6228,7 @@ body[id^='location-photos'] .content-section.section2 .col {
   body[id^='location-photos'] .content-section.section2 .col p {
     color: #fff; }
 body[id^='location-photos'] .content-section.section2.section1 .col p {
-  padding: 5px 0;
+  padding: 0 0 5px;
   margin-bottom: 15px;
   text-align: center;
   color: #fff;

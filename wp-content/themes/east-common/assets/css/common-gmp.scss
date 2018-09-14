@@ -774,17 +774,21 @@ body[id^='contact'] {
     div.row {
       display: flex;
       justify-content: center;
-      form#contact-form {
+      form.wpcf7-form {
         display: flex;
         justify-content: flex-start;
         flex-flow: column;
         label {
-          margin: 10px 0;
           display: flex;
           align-items: center;
           span {
-            display: inline-block;
-            width: 65px;
+            &:first-child {
+              display: inline-block;
+              width: 145px;
+            }
+            &.wpcf7-form-control-wrap {
+              margin-left: 10px;
+            }
           }
           input, textarea {
             width: 300px;

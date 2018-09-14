@@ -6359,20 +6359,21 @@ body[id^='contact'] .content-section {
   body[id^='contact'] .content-section div.row {
     display: flex;
     justify-content: center; }
-    body[id^='contact'] .content-section div.row form#contact-form {
+    body[id^='contact'] .content-section div.row form.wpcf7-form {
       display: flex;
       justify-content: flex-start;
       flex-flow: column; }
-      body[id^='contact'] .content-section div.row form#contact-form label {
-        margin: 10px 0;
+      body[id^='contact'] .content-section div.row form.wpcf7-form label {
         display: flex;
         align-items: center; }
-        body[id^='contact'] .content-section div.row form#contact-form label span {
+        body[id^='contact'] .content-section div.row form.wpcf7-form label span:first-child {
           display: inline-block;
-          width: 65px; }
-        body[id^='contact'] .content-section div.row form#contact-form label input, body[id^='contact'] .content-section div.row form#contact-form label textarea {
+          width: 145px; }
+        body[id^='contact'] .content-section div.row form.wpcf7-form label span.wpcf7-form-control-wrap {
+          margin-left: 10px; }
+        body[id^='contact'] .content-section div.row form.wpcf7-form label input, body[id^='contact'] .content-section div.row form.wpcf7-form label textarea {
           width: 300px; }
-        body[id^='contact'] .content-section div.row form#contact-form label textarea {
+        body[id^='contact'] .content-section div.row form.wpcf7-form label textarea {
           height: 100px; }
 
 body[id^='layouts'] .content-section .tool-tip {

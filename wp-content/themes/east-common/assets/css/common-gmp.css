@@ -5944,6 +5944,9 @@ div.header {
         display: inline-block;
         margin-right: 10px;
         cursor: pointer; }
+        div.header div.top-logo div.header-attachs ul.language-chooser li img {
+          height: 13px;
+          margin-bottom: 2px; }
     @media (max-width: 768px) {
       div.header div.top-logo div.navbar-header {
         float: right; } }

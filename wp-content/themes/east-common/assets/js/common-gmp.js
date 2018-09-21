@@ -128,7 +128,7 @@ $(document).ready(function () {
         var unavailableLabel = 'Unavailable:'
         var sizeLabel = 'Size:'
         var roomsLabel = 'Rooms:'
-        if ($("body").indexOf("layouts-mg") > 0) {
+        if (bodyId.indexOf("layouts-mg") > 0) {
             availableLabel = 'Захиалах боломжтой:'
             unavailableLabel = 'Захиалах боломжгүй:'
             sizeLabel = 'Талбайн хэмжээ:'

@@ -45,7 +45,7 @@ $post_slug = $post->post_name;
                 <?php
                 if (function_exists('pll_the_languages')) {
                     ?>
-                    <ul class="language-chooser"><?php pll_the_languages(); ?></ul>
+                    <ul class="language-chooser"><?php pll_the_languages(array('show_flags' => 1)); ?></ul>
                     <?php
                 }
                 ?>

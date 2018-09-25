@@ -233,7 +233,7 @@ a.more {
   }
 }
 
-#index {
+body[id^='index'] {
   .second-container {
     p.two-img {
       img {
@@ -250,7 +250,7 @@ a.more {
   }
 }
 
-#about {
+body[id^='about'] {
   .section1 {
     .col-sm-8 {
       p {
@@ -260,7 +260,7 @@ a.more {
   }
 }
 
-#news {
+body[id^='news'] {
   .second-container {
     h4.title {
       color: $navbar-default-link-hover-bg;
@@ -281,7 +281,7 @@ a.more {
   }
 }
 
-#business {
+body[id^='business'] {
   .container.second-container {
     h4.title {
       color: $navbar-default-link-active-bg;
@@ -313,7 +313,7 @@ a.more {
   }
 }
 
-#references {
+body[id^='references'] {
   .section1 {
     ul {
       list-style: none;
@@ -353,7 +353,7 @@ a.more {
   }
 }
 
-#contact, #impressum {
+body[id^='contact'], body[id^='impressum'] {
   .second-container {
     h4.title {
       color: $navbar-default-link-hover-bg;

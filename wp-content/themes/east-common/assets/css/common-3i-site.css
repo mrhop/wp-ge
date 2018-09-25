@@ -5971,77 +5971,77 @@ a.more {
 .site-content .site-main header.entry-header {
   display: none; }
 
-#index .second-container p.two-img img {
+body[id^='index'] .second-container p.two-img img {
   height: 210px; }
-  #index .second-container p.two-img img:first-child {
+  body[id^='index'] .second-container p.two-img img:first-child {
     width: 40%; }
-  #index .second-container p.two-img img:last-child {
+  body[id^='index'] .second-container p.two-img img:last-child {
     width: 60%;
     padding-left: 20px; }
 
-#about .section1 .col-sm-8 p {
+body[id^='about'] .section1 .col-sm-8 p {
   margin-bottom: 30px; }
 
-#news .second-container h4.title {
+body[id^='news'] .second-container h4.title {
   color: #ae1e23;
   font-size: 24px;
   margin-bottom: 25px; }
-#news .second-container p {
+body[id^='news'] .second-container p {
   font-weight: normal;
   font-size: 16px;
   line-height: 1.5em;
   margin-bottom: 15px; }
-#news .second-container p.desc {
+body[id^='news'] .second-container p.desc {
   font-style: italic;
   font-size: 22px;
   margin-bottom: 20px; }
 
-#business .container.second-container h4.title {
+body[id^='business'] .container.second-container h4.title {
   color: #ae1e23;
   font-size: 22px;
   margin-bottom: 50px; }
-  #business .container.second-container h4.title img {
+  body[id^='business'] .container.second-container h4.title img {
     height: 70px;
     margin-right: 50px; }
-#business .container.second-container ul {
+body[id^='business'] .container.second-container ul {
   padding-left: 17px; }
-  #business .container.second-container ul li {
+  body[id^='business'] .container.second-container ul li {
     margin-bottom: 15px; }
-#business .container.second-container div.row img {
+body[id^='business'] .container.second-container div.row img {
   margin-bottom: 20px; }
-#business .container.second-container .section2 hr, #business .container.second-container .section3 hr {
+body[id^='business'] .container.second-container .section2 hr, body[id^='business'] .container.second-container .section3 hr {
   border-top-color: #bbb;
   margin-bottom: 50px;
   margin-top: 50px; }
 
-#references .section1 ul {
+body[id^='references'] .section1 ul {
   list-style: none;
   padding-left: 0; }
-  #references .section1 ul li {
+  body[id^='references'] .section1 ul li {
     display: flex;
     align-items: flex-start;
     padding-right: 50px;
     margin-bottom: 50px; }
-    #references .section1 ul li div p.title {
+    body[id^='references'] .section1 ul li div p.title {
       color: #ae1e23;
       font-size: 20px; }
-    #references .section1 ul li div p.comment {
+    body[id^='references'] .section1 ul li div p.comment {
       font-style: italic;
       font-size: 20px; }
-    #references .section1 ul li img {
+    body[id^='references'] .section1 ul li img {
       width: 30%;
       margin-right: 50px; }
-    #references .section1 ul li:nth-child(even) {
+    body[id^='references'] .section1 ul li:nth-child(even) {
       justify-content: flex-end;
       background: #F1F2F2;
       padding-right: 0px;
       padding-left: 50px; }
-      #references .section1 ul li:nth-child(even) img {
+      body[id^='references'] .section1 ul li:nth-child(even) img {
         order: 10;
         margin-right: 0px;
         margin-left: 50px; }
 
-#contact .second-container h4.title, #impressum .second-container h4.title {
+body[id^='contact'] .second-container h4.title, body[id^='impressum'] .second-container h4.title {
   color: #ae1e23;
   font-size: 18px;
   margin-bottom: 5px; }

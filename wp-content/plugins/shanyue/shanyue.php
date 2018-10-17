@@ -78,7 +78,7 @@ function shanyue_page_sections_meta_box( $post ) {
 $ps_meta         = get_post_meta( $post->ID, '_shanyue_page_sections_data', true );
 $upload_link     = esc_url( get_upload_iframe_src( null, $post->ID ) );
 $ps_type         = ( ! empty( $ps_meta['type'] ) ) ? $ps_meta['type'] : '';
-$ps_page_belong  = ( ! empty( $ps_meta['pageBelong'] ) ) ? $ps_meta['pageBelong'] : '';
+$ps_page_belong   = get_post_meta( $post->ID, '_page_belong', true ) ;
 $ps_file_link_id = ( ! empty( $ps_meta['fileLinkId'] ) ) ? $ps_meta['fileLinkId'] : '';
 $ps_icon_class   = ( ! empty( $ps_meta['iconClass'] ) ) ? $ps_meta['iconClass'] : '';
 $ps_page_related = ( ! empty( $ps_meta['pageRelated'] ) ) ? $ps_meta['pageRelated'] : '';
@@ -102,7 +102,7 @@ echo '</tr><tr>';
 echo '<td>' . __( 'Page Belong', 'shanyue' ) . ':</td><td>';
 wp_dropdown_pages( array(
 	'selected' => $ps_page_belong,
-	'name'     => 'shanyue_page_sections[pageBelong]',
+	'name'     => 'page_belong',
     'show_option_none'     => 'Choose page below'
 ) );
 echo '</td>';
@@ -183,15 +183,16 @@ echo '<td>' . __( 'File Link', 'shanyue' ) . ':</td><td>'
 
 			// save the meta box data as post metadata
 			update_post_meta( $post_id, '_shanyue_page_sections_data', $shanyue_page_sections );
+            if ( isset( $_POST['page_belong'] ) ) {
+                $shanyue_page_belong = $_POST['page_belong'];
+                update_post_meta( $post_id, '_page_belong', $shanyue_page_belong );
+            }
 			if ( isset( $_POST['group_slug'] ) ) {
 				$shanyue_group_slug = $_POST['group_slug'];
 				$shanyue_group_slug = sanitize_text_field( $shanyue_group_slug );
 				update_post_meta( $post_id, '_group_slug', $shanyue_group_slug );
 			}
-
 		}
-
-
 	}
 
 	add_action( 'save_post', 'shanyue_page_sections_save_meta_box' );

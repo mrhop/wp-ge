@@ -21,6 +21,7 @@
 <?php
 global $post;
 $post_slug = $post->post_name;
+$east_common_site_id = get_theme_mod('site_id');
 ?>
 <body <?php body_class(); ?> id="<?php echo $post_slug; ?>">
 <div id="page" class="site">
@@ -81,27 +82,49 @@ $post_slug = $post->post_name;
         </nav><!-- #site-navigation -->
     </div><!-- #masthead -->
     <?php
-    $slider_args = array(
-        'post_type' => 'shanyue-p-sections',
-        'meta_key' => '_group_slug',
-        'meta_value' => 'home-slider_' . get_locale(),
-        'orderby' => 'menu-order',
-        'order' => 'asc'
-    );
-    $slider_query = new   wp_Query($slider_args);
-    if (!$slider_query->have_posts()) {
+
+    if ($east_common_site_id === 'eutecc') {
+        if (get_post_type() == 'post') {
+            $category = get_the_category();
+            $categorySlug = $category[0]->slug;
+            $currentPageId = get_page_by_path($categorySlug)->ID;
+        } else {
+            $currentPageId = get_the_ID();
+        }
+        $slider_args = array(
+            'post_type' => 'shanyue-p-sections',
+            'meta_key' => '_page_belong',
+            'meta_value' => $currentPageId,
+            'orderby' => 'menu-order',
+            'order' => 'asc'
+        );
+        $slider_query = new wp_Query($slider_args);
+    } else {
         $slider_args = array(
             'post_type' => 'shanyue-p-sections',
             'meta_key' => '_group_slug',
-            'meta_value' => 'home-slider',
+            'meta_value' => 'home-slider_' . get_locale(),
             'orderby' => 'menu-order',
             'order' => 'asc'
         );
         $slider_query = new   wp_Query($slider_args);
+        if (!$slider_query->have_posts()) {
+            $slider_args = array(
+                'post_type' => 'shanyue-p-sections',
+                'meta_key' => '_group_slug',
+                'meta_value' => 'home-slider',
+                'orderby' => 'menu-order',
+                'order' => 'asc'
+            );
+            $slider_query = new   wp_Query($slider_args);
+        }
     }
     if ($slider_query->have_posts()) {
+        if ($east_common_site_id === 'eutecc') {
+            $top_slider_class = 'container';
+        }
         ?>
-        <section class="top-slider ">
+        <section class="top-slider <?php echo $top_slider_class ?>">
             <ul class="swiper-container">
                 <ul class="swiper-wrapper">
                     <?php

@@ -29,10 +29,18 @@ $east_common_site_id = get_theme_mod('site_id');
                         </div>
                         <?php
                         get_template_part('eutecc/post', $categorySlug);
-
                         ?>
                     </div>
-                <?php } else {
+                <?php } else if ($east_common_site_id == 'huande') {
+                $category = get_the_category();
+                $categorySlug = $category[0]->slug
+                ?>
+                <div class="container">
+                    <?php
+                    get_template_part('huande/post', $categorySlug);
+                    ?>
+                </div>
+            <?php } else {
                     get_template_part('template-parts/content', get_post_type());
                     the_post_navigation();
                 }

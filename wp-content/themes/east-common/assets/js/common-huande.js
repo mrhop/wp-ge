@@ -14,6 +14,27 @@ $(document).ready(function () {
         })
     }
 
+    if (bodyId.indexOf('videos') > -1) {
+        $('video').click(function (e) {
+            var _this = this
+            $('video').each(function () {
+                if (_this !== this) {
+                    if (this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2) {
+                        this.pause()
+                        this.controls = true
+                    }
+                }
+            })
+            if ((this.currentTime <= 0 || this.paused || this.ended) && this.readyState > 0) {
+                this.play()
+                this.controls = false
+            } else if (this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2) {
+                this.pause()
+                this.controls = true
+            }
+        })
+    }
+
     // click menu and the breadcrumb
     document.querySelectorAll('#primary-menu >.menu-item >a').forEach(function (element) {
         var subMenu = element.parentElement.querySelector('.sub-menu');

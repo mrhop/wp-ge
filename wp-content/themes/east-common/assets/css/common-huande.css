@@ -6085,6 +6085,12 @@ div.title {
     text-decoration: none;
     float: right; }
 
+p.sub-title {
+  margin-bottom: 10px; }
+
+.sub-title {
+  color: #ae1f23; }
+
 .swiper-button {
   display: none; }
 
@@ -6160,6 +6166,47 @@ body[id^='index'] .entry-content .fourth-container .row {
       width: 300px;
       margin-bottom: 20px; }
 
+body[id^='profile'] .first-container ul.top-ul {
+  list-style: decimal;
+  padding-left: 15px; }
+body[id^='profile'] .first-container ul.bottom-ul li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px; }
+  body[id^='profile'] .first-container ul.bottom-ul li img {
+    width: 200px; }
+  body[id^='profile'] .first-container ul.bottom-ul li div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #333;
+    width: 100%; }
+    body[id^='profile'] .first-container ul.bottom-ul li div p {
+      margin-bottom: 0; }
+
+body[id^='company-milestones'] .first-container > div img {
+  width: 200px;
+  margin: 2px; }
+
+body[id^='tucher-group'] .swiper-container .caption .title {
+  border-bottom: none;
+  width: 50%; }
+body[id^='tucher-group'] .first-container > div img {
+  width: 200px;
+  display: block;
+  margin: auto; }
+
+body[id^='eutecc'] .first-container ul {
+  list-style: disc;
+  padding-left: 15px;
+  margin-bottom: 25px; }
+body[id^='eutecc'] .first-container img {
+  width: 80%;
+  margin: 10px auto 25px;
+  display: block; }
+
 body[id^='events'] .row {
   list-style: none;
   padding-left: 0; }
@@ -6183,6 +6230,81 @@ body[id^='events'] .row {
       color: #ae1f23;
       font-size: 16px;
       margin-bottom: 0; }
+
+body[id^='videos'] .first-container p.section-title {
+  text-align: left;
+  margin-bottom: 25px;
+  width: 100%; }
+body[id^='videos'] .first-container .row .col {
+  margin-bottom: 15px; }
+  body[id^='videos'] .first-container .row .col video {
+    width: 100%;
+    display: block;
+    margin: 0 auto 10px; }
+  body[id^='videos'] .first-container .row .col div.center-block {
+    height: 50px; }
+  body[id^='videos'] .first-container .row .col p {
+    text-align: left;
+    width: 90%;
+    margin: 0 auto 10px; }
+    body[id^='videos'] .first-container .row .col p.sub-title {
+      padding-right: 20px; }
+    body[id^='videos'] .first-container .row .col p a {
+      float: right; }
+
+body[id^='industry-solutions'] .first-container img {
+  width: 300px;
+  float: right; }
+
+body[id^='location'] .first-container {
+  position: relative;
+  overflow: hidden; }
+  body[id^='location'] .first-container ul {
+    list-style: disc;
+    padding-left: 15px;
+    margin-bottom: 25px; }
+  body[id^='location'] .first-container img {
+    width: 70%;
+    float: right;
+    display: block; }
+    @media (max-width: 768px) {
+      body[id^='location'] .first-container img {
+        width: 50%; } }
+    @media (max-width: 480px) {
+      body[id^='location'] .first-container img {
+        float: none;
+        width: 100%; } }
+
+body[id^='current-projects'] .first-container {
+  position: relative;
+  overflow: hidden; }
+  body[id^='current-projects'] .first-container div.row .col p {
+    margin-bottom: 50px; }
+    body[id^='current-projects'] .first-container div.row .col p.sub-title {
+      margin-bottom: 10px; }
+  body[id^='current-projects'] .first-container div.row .col > div {
+    margin-bottom: 10px; }
+    body[id^='current-projects'] .first-container div.row .col > div img {
+      width: 90%;
+      margin: 10px 10px;
+      display: block; }
+
+body[id^='contact-us'] .first-container p.section-title {
+  text-align: left;
+  margin-bottom: 25px; }
+body[id^='contact-us'] .first-container img {
+  display: block;
+  margin: auto; }
+body[id^='contact-us'] .first-container .row {
+  margin-bottom: 80px; }
+  body[id^='contact-us'] .first-container .row img {
+    width: 100px;
+    margin-bottom: 10px; }
+body[id^='contact-us'] .first-container p {
+  text-align: center;
+  margin-bottom: 10px; }
+body[id^='contact-us'] .first-container .bottom img {
+  width: 200px; }
 
 body.single, body.single-post {
   padding: 0 0 20px 0; }

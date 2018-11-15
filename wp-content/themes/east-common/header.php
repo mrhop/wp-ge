@@ -83,7 +83,7 @@ $east_common_site_id = get_theme_mod('site_id');
     </div><!-- #masthead -->
     <?php
 
-    if ($east_common_site_id === 'eutecc' || $east_common_site_id === 'huande') {
+    if ($east_common_site_id === 'eutecc' || $east_common_site_id === 'huande' || $east_common_site_id === 'eusua') {
         if (get_post_type() == 'post') {
             $category = get_the_category();
             $categorySlug = $category[0]->slug;
@@ -127,7 +127,7 @@ $east_common_site_id = get_theme_mod('site_id');
         }
     }
     if ($slider_query->have_posts()) {
-        if ($east_common_site_id === 'eutecc' || $east_common_site_id === 'huande') {
+        if ($east_common_site_id === 'eutecc' || $east_common_site_id === 'huande'|| $east_common_site_id === 'eusua') {
             $top_slider_class = 'container';
         }
         ?>

@@ -106,6 +106,31 @@ add_action('after_setup_theme', 'east_common_content_width', 0);
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
+
+// short code
+
+function wpb_list_child_pages()
+{
+    global $post;
+    if (is_page() && $post->post_parent) {
+        $childpages = wp_list_pages('sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0');
+    } else {
+        $childpages = wp_list_pages('sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0');
+    }
+    if ($childpages) {
+        $string = '<ul class="child-pages">' . $childpages . '</ul>';
+    }
+    return $string;
+}
+
+
+function register_shortcodes()
+{
+    add_shortcode('wpb_childpages', 'wpb_list_child_pages');
+}
+
+add_action('init', 'register_shortcodes');
+
 function east_common_widgets_init()
 {
     register_sidebar(array(
@@ -118,6 +143,7 @@ function east_common_widgets_init()
         'after_title' => '</h2>',
     ));
 }
+
 
 add_action('widgets_init', 'east_common_widgets_init');
 
@@ -137,20 +163,20 @@ function east_common_scripts()
     }
 
 
-    wp_enqueue_script('east-common-jquery', get_template_directory_uri() . '/assets/js/jquery-2.2.4.min.js',array(),false,true);
-    wp_enqueue_script('east-common-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js',array(),false,true);
-    wp_enqueue_script('east-common-swiper', get_template_directory_uri() . '/assets/js/swiper.min.js',array(),false,true);
-    wp_enqueue_script('east-common-flexslider', get_template_directory_uri() . '/assets/js/jquery.flexslider-min.js',array(),false,true);
+    wp_enqueue_script('east-common-jquery', get_template_directory_uri() . '/assets/js/jquery-2.2.4.min.js', array(), false, true);
+    wp_enqueue_script('east-common-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), false, true);
+    wp_enqueue_script('east-common-swiper', get_template_directory_uri() . '/assets/js/swiper.min.js', array(), false, true);
+    wp_enqueue_script('east-common-flexslider', get_template_directory_uri() . '/assets/js/jquery.flexslider-min.js', array(), false, true);
     if (!empty($east_common_site_id)) {
         // special here
-        if(strcmp($east_common_site_id ,'gmp') == 0){
+        if (strcmp($east_common_site_id, 'gmp') == 0) {
             // when gmp site here
-            wp_enqueue_script('east-common-imageMapResizer', get_template_directory_uri() . '/assets/js/imageMapResizer.min.js',array(),false,true);
-            wp_enqueue_script('east-common-scrollMonitor', get_template_directory_uri() . '/assets/js/scrollMonitor.js',array(),false,true);
-            wp_enqueue_script('east-common-maphilight', get_template_directory_uri() . '/assets/js/jquery.maphilight.min.js',array(),false,true);
+            wp_enqueue_script('east-common-imageMapResizer', get_template_directory_uri() . '/assets/js/imageMapResizer.min.js', array(), false, true);
+            wp_enqueue_script('east-common-scrollMonitor', get_template_directory_uri() . '/assets/js/scrollMonitor.js', array(), false, true);
+            wp_enqueue_script('east-common-maphilight', get_template_directory_uri() . '/assets/js/jquery.maphilight.min.js', array(), false, true);
 
         }
-        wp_enqueue_script('east-common-' . $east_common_site_id, get_template_directory_uri() . '/assets/js/common-' . $east_common_site_id . '.js',array(),false,true);
+        wp_enqueue_script('east-common-' . $east_common_site_id, get_template_directory_uri() . '/assets/js/common-' . $east_common_site_id . '.js', array(), false, true);
 
     }
 

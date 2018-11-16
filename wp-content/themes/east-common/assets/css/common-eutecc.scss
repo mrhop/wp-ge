@@ -168,6 +168,7 @@ div.header {
           list-style: none;
           margin-bottom: 0;
           > li {
+            position: relative;
             width: auto;
             a {
               transition: all 400ms linear;
@@ -192,6 +193,43 @@ div.header {
                 border: none;
                 font-size: 13px;
                 margin: 8px 0;
+              }
+            }
+            ul.sub-menu, ul.children {
+              position: absolute;
+              left: 30px;
+              display: none;
+              z-index: 10;
+              list-style: none;
+              padding: 0;
+              border: 1px solid rgba(0, 0, 0, 0.15);
+              background: rgba(255,255,255,.8);
+              box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+              li {
+                text-align: left;
+                a {
+                  border-bottom: 1px solid $brand-primary;
+                  border-right: 0;
+                  line-height: 1.42857;
+                }
+                &:hover, &.current-menu-item, &.current_page_item {
+                  a {
+                    color: $link-hover-color;
+                  }
+                }
+                &:last-child {
+                  a {
+                    border-bottom: 0;
+                  }
+                }
+              }
+            }
+            &.menu-item-has-children {
+              > a:after {
+                font-family: "Glyphicons Halflings";
+                content: "\e252";
+                margin-left: 3px;
+                font-size: 11px;
               }
             }
           }

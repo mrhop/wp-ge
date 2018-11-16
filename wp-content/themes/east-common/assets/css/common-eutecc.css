@@ -5934,6 +5934,7 @@ div.header {
           list-style: none;
           margin-bottom: 0; }
           div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li {
+            position: relative;
             width: auto; }
             div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li a {
               transition: all 400ms linear;
@@ -5955,6 +5956,31 @@ div.header {
                   border: none;
                   font-size: 13px;
                   margin: 8px 0; } }
+            div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children {
+              position: absolute;
+              left: 30px;
+              display: none;
+              z-index: 10;
+              list-style: none;
+              padding: 0;
+              border: 1px solid rgba(0, 0, 0, 0.15);
+              background: rgba(255, 255, 255, 0.8);
+              box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); }
+              div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li {
+                text-align: left; }
+                div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li a {
+                  border-bottom: 1px solid #1a2e46;
+                  border-right: 0;
+                  line-height: 1.42857; }
+                div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li:hover a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li.current-menu-item a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li.current_page_item a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li:hover a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li.current-menu-item a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li.current_page_item a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li:hover a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li.current-menu-item a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li.current_page_item a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li:hover a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li.current-menu-item a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li.current_page_item a {
+                  color: #0bc6f9; }
+                div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li:last-child a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li:last-child a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li:last-child a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li:last-child a {
+                  border-bottom: 0; }
+            div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li.menu-item-has-children > a:after, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li.menu-item-has-children > a:after {
+              font-family: "Glyphicons Halflings";
+              content: "\e252";
+              margin-left: 3px;
+              font-size: 11px; }
           @media (max-width: 991px) {
             div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul, div.header .navbar.navbar-default .container .navbar-collapse ul.menu {
               overflow-x: auto;

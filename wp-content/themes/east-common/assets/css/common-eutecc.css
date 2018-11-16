@@ -5936,7 +5936,7 @@ div.header {
           div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li {
             position: relative;
             width: auto; }
-            div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li a {
+            div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li > a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li > a {
               transition: all 400ms linear;
               border-bottom: 2px solid transparent;
               text-decoration: none;
@@ -5946,7 +5946,7 @@ div.header {
               border-right: solid 1px #1a2e46;
               width: 100%;
               text-align: center; }
-            div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li.current-menu-item a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li.current_page_item a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li.current-menu-parent a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li.current_page_parent a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li:hover a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li.current-menu-item a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li.current_page_item a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li.current-menu-parent a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li.current_page_parent a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li:hover a {
+            div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li.current-menu-item > a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li.current_page_item > a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li.current-menu-parent > a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li.current_page_parent > a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li:hover > a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li.current-menu-item > a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li.current_page_item > a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li.current-menu-parent > a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li.current_page_parent > a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li:hover > a {
               color: #0bc6f9; }
             @media (max-width: 991px) {
               div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li {
@@ -5969,9 +5969,13 @@ div.header {
               div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li {
                 text-align: left; }
                 div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li a {
+                  display: inline-block;
+                  padding: 10px 30px;
+                  margin: 0;
                   border-bottom: 1px solid #1a2e46;
                   border-right: 0;
-                  line-height: 1.42857; }
+                  line-height: 1.42857;
+                  width: 200px; }
                 div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li:hover a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li.current-menu-item a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li.current_page_item a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li:hover a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li.current-menu-item a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li.current_page_item a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li:hover a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li.current-menu-item a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li.current_page_item a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li:hover a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li.current-menu-item a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li.current_page_item a {
                   color: #0bc6f9; }
                 div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.sub-menu li:last-child a, div.header .navbar.navbar-default .container .navbar-collapse div.menu > ul > li ul.children li:last-child a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.sub-menu li:last-child a, div.header .navbar.navbar-default .container .navbar-collapse ul.menu > li ul.children li:last-child a {

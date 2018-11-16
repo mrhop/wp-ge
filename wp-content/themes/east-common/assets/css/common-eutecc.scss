@@ -170,7 +170,7 @@ div.header {
           > li {
             position: relative;
             width: auto;
-            a {
+            > a {
               transition: all 400ms linear;
               border-bottom: 2px solid transparent;
               text-decoration: none;
@@ -182,7 +182,7 @@ div.header {
               text-align: center;
             }
             &.current-menu-item, &.current_page_item, &.current-menu-parent, &.current_page_parent, &:hover {
-              a {
+              > a {
                 color: $navbar-default-link-active-color;
               }
             }
@@ -203,14 +203,18 @@ div.header {
               list-style: none;
               padding: 0;
               border: 1px solid rgba(0, 0, 0, 0.15);
-              background: rgba(255,255,255,.8);
+              background: rgba(255, 255, 255, .8);
               box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
               li {
                 text-align: left;
                 a {
+                  display: inline-block;
+                  padding: 10px 30px;
+                  margin: 0;
                   border-bottom: 1px solid $brand-primary;
                   border-right: 0;
                   line-height: 1.42857;
+                  width: 200px;
                 }
                 &:hover, &.current-menu-item, &.current_page_item {
                   a {
@@ -1161,7 +1165,7 @@ body[id^='technology-partners'] {
     width: 50%;
     left: 50px;
     top: 30px;
-    h2{
+    h2 {
       line-height: 1.5;
     }
     @media(max-width: $screen-xs-max) {
@@ -1241,7 +1245,7 @@ body[id^='technology-partners'] {
   }
 }
 
-body[id^='our-locations']  {
+body[id^='our-locations'] {
   .first-container {
     div.bg {
       img {

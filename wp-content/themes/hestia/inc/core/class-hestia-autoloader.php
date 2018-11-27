@@ -176,6 +176,9 @@ class Hestia_Autoloader {
 			'Hestia_Import_Utilities'                     => HESTIA_PHP_INCLUDE . 'content-import',
 			'Hestia_Import_Zerif'                         => HESTIA_PHP_INCLUDE . 'content-import',
 			'Hestia_Import_Zerif_Frontpage'               => HESTIA_PHP_INCLUDE . 'content-import',
+
+            // east
+            'Hestia_East_Slider'                          => HESTIA_PHP_INCLUDE . 'customizer/controls/custom-controls/east-slider',
 		);
 	}
 

@@ -1,0 +1,47 @@
+/*
+ Theme Name: Hestia Eutecc Child
+ Description:  A Hestia Child theme for Eutecc
+ Author:       East Huo
+ Template:     hestia
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  hestia-eutecc
+*/
+@import "../hestia/style.css";
+
+.hestia-about {
+  padding: 0;
+  p {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 10px
+  }
+  .about-sub {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    .col-md-5 {
+      margin-top: -1000px;
+      padding-top: 1000px;
+      margin-bottom: -1000px;
+      padding-bottom: 1000px;
+      blockquote {
+        margin-left: 50px;
+      }
+    }
+    .col-md-7 {
+      padding: 30px 50px;
+      h3 {
+        line-height: 110%;
+        margin-bottom: 10px;
+        margin-top: 0;
+      }
+    }
+  }
+  .sub-features {
+    background: #222222;
+    padding: 30px 50px;
+  }
+}

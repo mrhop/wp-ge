@@ -423,7 +423,8 @@ class Hestia_Public_Typography extends Hestia_Inline_Style_Manager {
 		section.hestia-subscribe h2.title, 
 		section.hestia-blogs .hestia-title,
 		.section.related-posts .hestia-title,
-		section.hestia-contact .hestia-title{
+		section.hestia-contact .hestia-title,
+		section[class^="hestia-east"] h2,div[class^="hestia-east"] h2{
 			font-size: ' . absint( $v1 ) . 'px;
 		}' : '';
 
@@ -435,13 +436,15 @@ class Hestia_Public_Typography extends Hestia_Inline_Style_Manager {
 		section.hestia-blogs h4.card-title,
 		.section.related-posts h4.card-title,
 		section.hestia-contact h4.card-title, 
-		section.hestia-contact .hestia-description h6{
+		section.hestia-contact .hestia-description h6,
+		section[class^="hestia-east"] .h4,div[class^="hestia-east"] .h4{
 			font-size: ' . absint( $v2 ) . 'px;
 		}' : '';
 
 		$custom_css .= ! empty( $v3 ) ? '	
 		section.hestia-work h4.card-title, 
-		section.hestia-contact .hestia-description h5{
+		section.hestia-contact .hestia-description h5,
+		{
 			font-size: ' . absint( $v3 ) . 'px;
 		}' : '';
 
@@ -506,7 +509,8 @@ class Hestia_Public_Typography extends Hestia_Inline_Style_Manager {
 			section.hestia-testimonials h5.description,
 			section.hestia-subscribe h5.subscribe-description,
 			section.hestia-blogs h5.description,
-			section.hestia-contact h5.description{
+			section.hestia-contact h5.description,
+			section[class^="hestia-east"] h5,div[class^="hestia-east"] h5{
 				font-size: ' . absint( $v1 ) . 'px;
 			}' : '';
 
@@ -545,7 +549,8 @@ class Hestia_Public_Typography extends Hestia_Inline_Style_Manager {
 		.section.related-posts p.card-description,
 		.hestia-contact p,
 		section.hestia-features .hestia-info p,
-		section.hestia-shop .card-description p{
+		section.hestia-shop .card-description p,
+		section[class^="hestia-east"] p,div[class^="hestia-east"] p{
 			font-size: ' . absint( $v1 ) . 'px;
 		}' : '';
 
@@ -556,7 +561,8 @@ class Hestia_Public_Typography extends Hestia_Inline_Style_Manager {
 		section.hestia-pricing .card-pricing h6.category,
 		section.hestia-testimonials h6.category,
 		section.hestia-blogs h6.category,
-		.section.related-posts h6.category{
+		.section.related-posts h6.category,
+		section[class^="hestia-east"] h6,div[class^="hestia-east"] h6{
 			font-size: ' . absint( $v2 ) . 'px;
 		}' : '';
 

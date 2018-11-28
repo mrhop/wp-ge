@@ -11,29 +11,38 @@
 */
 @import "../hestia/style.css";
 
+$icon-font-path: "assets/fonts/" !default;
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
+p {
+  color: #1a1a1a;
+}
+
 .hestia-about {
   padding: 0;
-  p {
-    font-size: 14px;
-    line-height: 20px;
-    margin-bottom: 10px
-  }
   .about-sub {
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+    @media (min-width: $screen-sm) {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      .col-md-5 {
+        margin-top: -1000px;
+        padding-top: 1000px;
+        margin-bottom: -1000px;
+        padding-bottom: 1000px;
+        blockquote {
+          margin-left: 50px;
+        }
+      }
+    }
     .col-md-5 {
-      margin-top: -1000px;
-      padding-top: 1000px;
-      margin-bottom: -1000px;
-      padding-bottom: 1000px;
       blockquote {
         margin-left: 50px;
       }
     }
     .col-md-7 {
       padding: 30px 50px;
-      h3 {
+      h2 {
         line-height: 110%;
         margin-bottom: 10px;
         margin-top: 0;
@@ -43,5 +52,151 @@
   .sub-features {
     background: #222222;
     padding: 30px 50px;
+    .col-md-4 {
+      padding-left: 60px;
+      p {
+        color: #fff;
+      }
+      span.glyphicon {
+        margin-left: -40px;
+        margin-right: 10px;
+        font-size: 1.6em;
+        vertical-align: middle;
+      }
+    }
+  }
+  .sub-team {
+    .swiper-container {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+        img {
+          width: 150px;
+          height: auto;
+          margin-bottom: 5px;
+        }
+        color: white;
+        h5 {
+          color: white;
+        }
+        a {
+          color: #fff;
+        }
+        .social-link {
+          text-align: center;
+          a {
+            display: inline-block;
+            margin: 20px;
+          }
+        }
+      }
+    }
+  }
+  .sub-clients {
+    h2, h4 {
+      color: #fff;
+    }
+    .swiper-container {
+      @media (min-width: $screen-sm) {
+        width: 80%;
+      }
+      width: 100%;
+      padding-top: 0px;
+      padding-bottom: 50px;
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        p {
+          color: #fff;
+        }
+      }
+      .swiper-pagination {
+        .swiper-pagination-bullet {
+          background: #000;
+          width: 30px;
+          height: 3px;
+          border-radius: 0;
+          &.swiper-pagination-bullet-active {
+            background: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hestia-blogs {
+  h5.description {
+    @media (min-width: $screen-sm) {
+      width: 60%;
+      margin: auto;
+    }
+  }
+}
+
+footer.footer {
+  div.container {
+    .content {
+      .row {
+        .col-md-4 {
+          .widget {
+            margin-bottom: 0;
+          }
+          &:nth-child(2) {
+            display: flex;
+            .widget_nav_menu {
+              .menu-item {
+                line-height: 1.1;
+                a {
+                  padding: 0;
+                }
+              }
+              margin-right: 20px;
+            }
+            .widget_text {
+              p {
+                margin-bottom: 3px;
+                line-height: 1;
+              }
+            }
+          }
+          .widget_newsletterwidgetminimal {
+            h5 {
+              margin-top: 0;
+              line-height: 1;
+            }
+            form {
+              display: flex;
+              input.tnp-email {
+                margin-bottom: 0;
+              }
+              input.tnp-submit {
+                width: 130px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .hestia-bottom-footer-content {
+      .social {
+        padding: 15px 0;
+        a {
+          margin: 0 10px;
+          font-size: 18px;
+        }
+      }
+    }
   }
 }

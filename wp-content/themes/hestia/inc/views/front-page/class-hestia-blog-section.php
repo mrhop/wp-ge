@@ -73,7 +73,7 @@ class Hestia_Blog_Section extends Hestia_Abstract_Main {
 		$container_class = $is_shortcode === true ? '' : 'container';
 
 		hestia_before_blog_section_trigger(); ?>
-		<section class="hestia-blogs <?php echo esc_attr( $wrapper_class ); ?>" id="blog"
+		<section class="hestia-blogs <?php echo esc_attr( $wrapper_class ); ?> hestia-east" id="blog"
 			data-sorder="hestia_blog" <?php echo wp_kses_post( $section_style ); ?>>
 			<?php
 			hestia_before_blog_section_content_trigger();
@@ -168,8 +168,9 @@ class Hestia_Blog_Section extends Hestia_Abstract_Main {
 							</div>
 						<?php endif; ?>
 					<div class="content">
-						<h6 class="category"><?php echo hestia_category(); ?></h6>
-						<h4 class="card-title entry-title">
+<!--						<h6 class="category">--><?php //echo hestia_category(); ?><!--</h6>-->
+                        <h6 class="category-t has-accent-color"><?php echo hestia_category(); ?></h6>
+                        <h4 class="card-title entry-title">
 							<a class="blog-item-title-link" href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
 								<?php echo wp_kses( force_balance_tags( get_the_title() ), $allowed_html ); ?>
 							</a>

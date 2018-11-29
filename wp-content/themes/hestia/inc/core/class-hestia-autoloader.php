@@ -179,6 +179,8 @@ class Hestia_Autoloader {
 
             // east
             'Hestia_East_Slider'                          => HESTIA_PHP_INCLUDE . 'customizer/controls/custom-controls/east-slider',
+            'Hestia_East_Categories'                          => HESTIA_PHP_INCLUDE . 'customizer/controls/custom-controls/east-categories',
+            'Hestia_Footer_Controls'                      => HESTIA_PHP_INCLUDE . 'customizer/general',
 		);
 	}
 

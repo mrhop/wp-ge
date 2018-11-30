@@ -97,8 +97,8 @@ class Hestia_Blog_Section_Controls extends Hestia_Front_Page_Section_Controls_Ab
     }
 
     /**
-     * Render callback function
-     */
+ * Render callback function
+ */
     public function blog_content_callback()
     {
         $blog_section = new Hestia_Blog_Section();

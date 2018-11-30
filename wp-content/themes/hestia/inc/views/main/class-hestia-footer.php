@@ -18,6 +18,7 @@ class Hestia_Footer extends Hestia_Abstract_Main
     {
         add_action('hestia_do_footer', array($this, 'the_footer_content'));
         add_filter('wp_nav_menu_args', array($this, 'modify_footer_menu_classes'));
+        add_action('hestia_do_bottom_footer_top_content', array($this, 'bottom_footer_top_content'));
         add_action('hestia_do_bottom_footer_content', array($this, 'bottom_footer_content'));
     }
 
@@ -84,7 +85,8 @@ class Hestia_Footer extends Hestia_Abstract_Main
         ?>
         <footer class="footer <?php echo esc_attr($this->the_footer_class()); ?> footer-big">
             <?php hestia_before_footer_content_trigger(); ?>
-            <div class="container">
+            <?php $this->wrapped_bottom_footer_top_content(); ?>
+            <div class="container footer-bottom">
                 <?php hestia_before_footer_widgets_trigger(); ?>
                 <?php $this->render_footer_sidebars(); ?>
                 <?php hestia_after_footer_widgets_trigger(); ?>
@@ -112,6 +114,55 @@ class Hestia_Footer extends Hestia_Abstract_Main
 
         return $classes;
     }
+
+
+    /**
+     * Function to display footer top content.
+     */
+    public function wrapped_bottom_footer_top_content()
+    {
+        $hide_section = get_theme_mod('hestia_footer_top_hide', false);
+        if (!$hide_section) {
+            echo '<div class="footer-top">';
+            do_action('hestia_do_bottom_footer_top_content');
+            echo '</div>';
+        }
+    }
+
+    /**
+     * Function to display footer top content.
+     */
+    public function bottom_footer_top_content()
+    {
+        $title = get_theme_mod('hestia_foot_top_title');
+        $subtitle = get_theme_mod('hestia_foot_top_subtitle');
+        $background = get_theme_mod('hestia_foot_top_background');
+        $linkPageId = get_theme_mod('hestia_foot_top_link_page');
+        if ($linkPageId == 0) {
+            $linkPage = '#';
+        } else {
+            $linkPage = get_the_permalink($linkPageId);
+        }
+        ?>
+        <div style="background-image:url('<?php echo $background ?>');">
+            <div class="container hestia-east">
+                <h2>
+                    <?php
+                    //echo wp_kses_post( $hestia_general_credits );
+                    echo $title
+                    ?>
+                </h2>
+                <a class="btn btn-primary h5" href="<?php echo $linkPage ?>">
+                    <?php
+                    //echo wp_kses_post( $hestia_general_credits );
+                    echo $subtitle
+                    ?>
+                </a>
+            </div>
+        </div>
+        <?php
+    }
+
 
     /**
      * Function to display footer copyright and footer menu.
@@ -190,7 +241,7 @@ class Hestia_Footer extends Hestia_Abstract_Main
 
     private function add_footer_social_alignment_class()
     {
-		$hestia_social_alignment = get_theme_mod( 'hestia_social_alignment', 'right' );
+        $hestia_social_alignment = get_theme_mod('hestia_social_alignment', 'right');
         if ($hestia_social_alignment === 'left') {
             return 'pull-left';
         }

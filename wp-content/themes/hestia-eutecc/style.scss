@@ -137,7 +137,7 @@ p {
 }
 
 .hestia-blogs {
-  padding: 20px 0;
+  padding: 20px 0 0;
   h5.description {
     @media (min-width: $screen-sm) {
       width: 60%;
@@ -149,16 +149,37 @@ p {
 }
 
 footer.footer {
-  div.container {
+  padding-top: 0;
+  div.footer-top {
+    > div {
+      background-position: top center;
+      background-size: cover;
+      color: #fff;
+      padding: 65px;
+      h2 {
+        font-family: "Roboto Slab", "Times New Roman", serif;
+        font-weight: 700;
+      }
+      h5 {
+        font-size: 14px;
+      }
+    }
+  }
+  div.container.footer-bottom {
+    padding-top: 20px;
     .content {
       .row {
         .col-md-4 {
+          @media (max-width: $screen-sm-max) {
+            margin-bottom: 20px;
+          }
           .widget {
             margin-bottom: 0;
           }
           &:nth-child(2) {
             display: flex;
             .widget_nav_menu {
+              width: 60%;
               .menu-item {
                 line-height: 1.1;
                 a {
@@ -168,6 +189,7 @@ footer.footer {
               margin-right: 20px;
             }
             .widget_text {
+              width: 40%;
               p {
                 margin-bottom: 3px;
                 line-height: 1;

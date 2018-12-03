@@ -344,6 +344,10 @@ class Hestia_Header_Layout_Manager extends Hestia_Abstract_Main {
 			$entry_class = 'entry-title';
 		}
 		$header_content_output = '<h1 class="' . esc_attr( $title_class ) . ' ' . esc_attr( $entry_class ) . '">' . single_post_title( '', false ) . '</h1>';
+        $sub_title = get_field('sub_title');
+        if ( $sub_title ) {
+            $header_content_output .= '<h5 class="description">' . $sub_title . '</h5>';
+        }
 		return $header_content_output;
 	}
 

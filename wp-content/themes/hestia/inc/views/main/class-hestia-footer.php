@@ -180,6 +180,10 @@ class Hestia_Footer extends Hestia_Abstract_Main
      */
     public function bottom_footer_content()
     {
+
+        $copyright = get_theme_mod('hestia_foot_bottom_copyright', 'Copyright');
+        $socialLinks = get_theme_mod('hestia_foot_bottom_social', 'Social Links');
+
         $hestia_general_credits = get_theme_mod(
             'hestia_general_credits',
             sprintf(
@@ -208,12 +212,12 @@ class Hestia_Footer extends Hestia_Abstract_Main
         <div class="copyright <?php echo esc_attr($this->add_footer_copyright_alignment_class()); ?>">
             <?php
             //echo wp_kses_post( $hestia_general_credits );
-            echo '© Copyright 2018 EUTECC. All Rights Reserved'
+            echo $copyright
             ?>
         </div>
         <div class="social <?php echo esc_attr($this->add_footer_social_alignment_class()); ?>">
             <?php
-            echo '<a><i class="fa fa-facebook-f"></i></a><a><i class="fa fa-twitter"></i></a><a><i class="fa fa-linkedin"></i></a><a><i class="fa fa-instagram"></i></a>'
+            echo $socialLinks
             ?>
         </div>
     <?php

@@ -27,7 +27,6 @@
                     }
 
                     tArea.css({
-                        visibility: 'hidden', display: 'block', width: '0', height: '0'
                     }).on('keyup', function () {
                         content = tArea.val();
                         clearTimeout(setChange);

@@ -155,11 +155,32 @@ class Hestia_Footer_Controls extends Hestia_Register_Customizer_Controls
                 'label' => esc_html__('Copyright', 'hestia'),
                 'section' => 'hestia_footer_bottom',
                 'priority' => 5,
+            ), null,
+                array(
+                    'selector' => '.footer .hestia-bottom-footer-content',
+                    'settings' => 'hestia_foot_bottom_copyright',
+                    'render_callback' => array($this, 'footer_bottom_content_callback'),
+                )
+            )
+        );
+
+        //Add the copyright
+        $this->add_control(
+            new Hestia_Customizer_Control(
+                'hestia_foot_bottom_social',
+                array(
+                    'sanitize_callback' => 'wp_kses_post',
+                    'transport' => $this->selective_refresh,
+                    'default' => 'Social Links',
+                ), array(
+                'label' => esc_html__('Social Links', 'hestia'),
+                'section' => 'hestia_footer_bottom',
+                'priority' => 6,
             ),
                 'Hestia_East_Editor',
                 array(
                     'selector' => '.footer .hestia-bottom-footer-content',
-                    'settings' => 'hestia_foot_bottom_copyright',
+                    'settings' => 'hestia_foot_bottom_social',
                     'render_callback' => array($this, 'footer_bottom_content_callback'),
                 )
             )
@@ -183,7 +204,7 @@ class Hestia_Footer_Controls extends Hestia_Register_Customizer_Controls
     public function footer_bottom_content_callback()
     {
         $Hestia_Footer = new Hestia_Footer();
-        // $Hestia_Footer->bottom_footer_top_content();
+         $Hestia_Footer->bottom_footer_content();
     }
 
     private function getPageOptions()

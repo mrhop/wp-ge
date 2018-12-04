@@ -1,5 +1,10 @@
 jQuery(document).ready(function ($) {
-
+    new Swiper('.swiper-container.normal-navigate', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
     new Swiper('.swiper-container.multi-3d', {
         effect: 'coverflow',
         grabCursor: true,

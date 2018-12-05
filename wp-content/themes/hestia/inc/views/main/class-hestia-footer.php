@@ -123,7 +123,7 @@ class Hestia_Footer extends Hestia_Abstract_Main
     {
         $hide_section = get_theme_mod('hestia_footer_top_hide', false);
         if (!$hide_section) {
-            echo '<div class="footer-top">';
+            echo '<div class="footer-top has-background has-accent-background-color">';
             do_action('hestia_do_bottom_footer_top_content');
             echo '</div>';
         }
@@ -152,7 +152,7 @@ class Hestia_Footer extends Hestia_Abstract_Main
                     echo $title
                     ?>
                 </h2>
-                <a class="btn btn-primary h5" href="<?php echo $linkPage ?>">
+                <a class="btn btn-primary" href="<?php echo $linkPage ?>">
                     <?php
                     //echo wp_kses_post( $hestia_general_credits );
                     echo $subtitle

@@ -14,12 +14,130 @@
 $icon-font-path: "assets/fonts/" !default;
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('./assets/fonts/Century Gothic.woff2') format('woff2'), url('./assets/fonts/Century Gothic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Century Gothic Italic';
+  src: url('./assets/fonts/Century Gothic-I.woff2') format('woff2'), url('./assets/fonts/Century Gothic-I.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat Bold';
+  src: url('./assets/fonts/Montserrat-Bold.woff2') format('woff2'), url('./assets/fonts/Montserrat-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat Light';
+  src: url('./assets/fonts/Montserrat-Light.woff2') format('woff2'), url('./assets/fonts/Montserrat-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat SemiBold';
+  src: url('./assets/fonts/Montserrat-SemiBold.woff2') format('woff2'), url('./assets/fonts/Montserrat-SemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display Regular';
+  src: url('./assets/fonts/PlayfairDisplay-Regular.woff2') format('woff2'), url('./assets/fonts/PlayfairDisplay-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #3d3d3d;
+}
+
 p {
-  color: #1a1a1a;
+  color: #4b4b4b;
+  font-family: "Century Gothic";
+  &.sub-title {
+    font-family: "Century Gothic";
+    font-size: 16px;
+  }
+}
+
+// total change
+.navbar.navbar-transparent {
+  box-shadow: 0 1px 10px -6px rgba(0, 0, 0, 0.42), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px -2px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-bottom: 70px;
+  > .container {
+    padding-top: 10px;
+  }
+  .navbar-nav {
+    > li {
+      > a {
+        color: #3d3d3d;
+      }
+    }
+
+  }
+}
+
+.navbar.hestia_left {
+  #main-navigation {
+    margin-left: 0;
+    .navbar-nav {
+      > li {
+        > a {
+          font-family: Montserrat;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .header-sidebar-wrapper {
+    margin-left: auto;
+    margin-right: 0;
+    .textwidget {
+      p {
+        margin-bottom: 0;
+        font-size: 13px;
+      }
+      a {
+        color: #000;
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+    @media (max-width: $screen-xs-max) {
+      display: none;
+    }
+  }
+}
+
+#carousel-hestia-generic {
+  margin-top: 70px;
 }
 
 .hestia-about {
   padding: 0;
+  h1, h2, h3, h4, h5 {
+    color: #3d3d3d;
+  }
+  p {
+    color: #4b4b4b;
+    font-family: "Century Gothic";
+    &.sub-title {
+      font-family: "Century Gothic";
+      font-size: 16px;
+      margin-bottom: 30px;
+      margin-top: -20px;
+    }
+  }
   .about-sub {
     @media (min-width: $screen-sm) {
       overflow: hidden;
@@ -30,14 +148,32 @@ p {
         padding-top: 1000px;
         margin-bottom: -1000px;
         padding-bottom: 1000px;
-        blockquote {
-          margin-left: 50px;
-        }
       }
     }
     .col-md-5 {
+      .quote-begin {
+        font-size: 120px;
+        font-family: 'Playfair Display Regular';
+        line-height: 1;
+        color: #67BCDB;
+      }
       blockquote {
-        margin-left: 50px;
+        margin-top: -70px;
+        border-left: 0;
+        margin-left: 30px;
+        p {
+          font-family: 'Playfair Display Regular';
+          text-transform: uppercase;
+          font-size: 30px;
+          font-style: normal;
+          color: #fff;
+        }
+        .quote-footer {
+          font-family: "Century Gothic Italic";
+          color: #fff;
+          font-size: 12px;
+          font-style: italic;
+        }
       }
     }
     .col-md-7 {
@@ -69,17 +205,23 @@ p {
       h5, p {
         color: #fff;
       }
-      span.glyphicon, i {
+      span.glyphicon, i, img {
         margin-left: -40px;
         margin-right: 10px;
         font-size: 1.6em;
         vertical-align: middle;
+      }
+      img {
+        margin-left: -50px;
+        margin-right: 10px;
+        width: 40px
       }
     }
     > p {
       color: #fff;
       text-align: center;
       margin-top: 30px;
+      font-size: 16px;
     }
   }
   .sub-team {
@@ -115,9 +257,7 @@ p {
     }
   }
   .sub-clients {
-    h2, h4 {
-      color: #fff;
-    }
+
     .swiper-container {
       @media (min-width: $screen-md-min) {
         width: 80%;
@@ -126,7 +266,7 @@ p {
       height: 100%;
       padding-top: 0px;
       .swiper-slide {
-        padding: 60px;
+        padding: 60px 60px 40px;
         /* Center slide text vertically */
         display: -webkit-box;
         display: -ms-flexbox;
@@ -141,9 +281,6 @@ p {
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
-        p {
-          color: #fff;
-        }
         h4 {
           text-align: center;
           margin: 0;
@@ -153,19 +290,19 @@ p {
       }
       .swiper-pagination {
         .swiper-pagination-bullet {
-          background: #000;
+          //background: $brand-primary;
           width: 30px;
           height: 3px;
           border-radius: 0;
           &.swiper-pagination-bullet-active {
-            background: #fff;
+            //background: #1e73be;
           }
         }
       }
       .swiper-button-prev, .swiper-button-next {
-        color: #fff;
-        background: none;
-        font-size: 40px;
+        //color: #fff;
+        //background: none;
+        //font-size: 40px;
       }
     }
   }
@@ -208,10 +345,12 @@ footer.footer {
       color: #fff;
       padding: 65px;
       h2 {
-        font-weight: 700;
+        color: #fff;
       }
-      h5 {
-        font-size: 14px;
+      a.btn {
+        box-shadow: 0 14px 26px -12px rgba(52, 169, 211, 1), 0 4px 23px 0 rgba(33, 33, 33, 1), 0 8px 10px -5px rgba(52, 169, 211, 1);
+        font-family: Montserrat SemiBold;
+        letter-spacing: 2px;
       }
     }
   }
@@ -234,7 +373,9 @@ footer.footer {
                 line-height: 1.1;
                 a {
                   padding: 0;
-                  font-weight: lighter;
+                  font-family: 'Montserrat Light';
+                  font-size: 12px;
+                  opacity: 1;
                 }
               }
               margin-right: 20px;
@@ -243,8 +384,13 @@ footer.footer {
               width: 40%;
               p {
                 color: #fff;
+                font-family: 'Montserrat Light';
                 margin-bottom: 3px;
                 line-height: 1;
+                a {
+                  font-family: 'Century Gothic';
+
+                }
               }
             }
           }
@@ -252,14 +398,27 @@ footer.footer {
             h5 {
               margin-top: 0;
               line-height: 1;
+              font-family: 'Century Gothic';
+              font-weight: normal;
+              font-size: 14px;
+              text-align: right;
             }
-            form {
-              display: flex;
-              input.tnp-email {
-                margin-bottom: 0;
-              }
-              input.tnp-submit {
-                width: 130px;
+            .tnp {
+              form {
+                display: flex;
+                justify-content: flex-end;
+                input.tnp-email {
+                  margin-bottom: 0;
+                  border-radius: 20px 0px 0px 20px;
+                  width: 150px;
+                }
+                input.tnp-submit {
+                  width: 45px;
+                  border-radius: 0 20px 20px 0;
+                  background: #34a9d3 no-repeat center;
+                  padding: 8px 10px;
+                  background-image: url("./assets/images/arrow-right.png");
+                }
               }
             }
           }
@@ -275,8 +434,9 @@ footer.footer {
         margin-bottom: 0;
       }
       .copyright {
-        font-family: "Century Gothic";
+        font-family: "Montserrat Light";
         font-weight: normal;
+        font-size: 12px;
       }
       .social {
         padding: 15px 0;

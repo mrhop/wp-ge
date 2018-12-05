@@ -26,13 +26,13 @@ class Hestia_Header extends Hestia_Abstract_Main {
 			<?php hestia_before_header_content_trigger(); ?>
 			<div class="container">
 				<?php
-				if ( ! $this->is_full_screen_menu() ) {
-					$this->navbar_sidebar();
-				}
 				$this->navbar_header();
 				if ( apply_filters( 'hestia_header_show_primary_menu', true ) ) {
 					$this->render_primary_menu();
 				}
+                if ( ! $this->is_full_screen_menu() ) {
+                    $this->navbar_sidebar();
+                }
 				?>
 			</div>
 			<?php hestia_after_header_content_trigger(); ?>
@@ -120,9 +120,9 @@ class Hestia_Header extends Hestia_Abstract_Main {
 	private function navbar_sidebar() {
 		$header_alignment = get_theme_mod( 'hestia_header_alignment', apply_filters( 'hestia_header_alignment_default', 'left' ) );
 
-		if ( $header_alignment !== 'right' ) {
-			return;
-		}
+//		if ( $header_alignment !== 'right' ) {
+//			return;
+//		}
 
 		if ( is_active_sidebar( 'header-sidebar' ) ) {
 			?>

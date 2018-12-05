@@ -8,36 +8,40 @@
 /**
  * Class Hestia_Colors
  */
-class Hestia_Colors extends Hestia_Abstract_Main {
+class Hestia_Colors extends Hestia_Abstract_Main
+{
 
-	/**
-	 * Add all the hooks necessary.
-	 */
-	public function init() {
-		add_action( 'wp_enqueue_scripts', array( $this, 'add_inline_color_styles' ) );
-	}
+    /**
+     * Add all the hooks necessary.
+     */
+    public function init()
+    {
+        add_action('wp_enqueue_scripts', array($this, 'add_inline_color_styles'));
+    }
 
-	/**
-	 * Add inline style for colors.
-	 */
-	public function add_inline_color_styles() {
-		wp_add_inline_style( apply_filters( 'hestia_custom_color_handle', 'hestia_style' ), $this->colors_inline_style() );
-		wp_add_inline_style( 'hestia_woocommerce_style', $this->woo_colors_inline_style() );
-	}
+    /**
+     * Add inline style for colors.
+     */
+    public function add_inline_color_styles()
+    {
+        wp_add_inline_style(apply_filters('hestia_custom_color_handle', 'hestia_style'), $this->colors_inline_style());
+        wp_add_inline_style('hestia_woocommerce_style', $this->woo_colors_inline_style());
+    }
 
-	/**
-	 * Colors inline style.
-	 *
-	 * @return string
-	 */
-	private function colors_inline_style() {
+    /**
+     * Colors inline style.
+     *
+     * @return string
+     */
+    private function colors_inline_style()
+    {
 
-		$custom_css = '';
+        $custom_css = '';
 
-		$color_accent    = get_theme_mod( 'accent_color', apply_filters( 'hestia_accent_color_default', '#e91e63' ) );
-		$header_gradient = get_theme_mod( 'hestia_header_gradient_color', apply_filters( 'hestia_header_gradient_default', '#a81d84' ) );
+        $color_accent = get_theme_mod('accent_color', apply_filters('hestia_accent_color_default', '#e91e63'));
+        $header_gradient = get_theme_mod('hestia_header_gradient_color', apply_filters('hestia_header_gradient_default', '#a81d84'));
 
-		$custom_css .= ! empty( $color_accent ) ? '	
+        $custom_css .= !empty($color_accent) ? '	
 		a, 
 		.navbar .dropdown-menu li:hover > a,
 		.navbar .dropdown-menu li:focus > a,
@@ -51,11 +55,11 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		.card-blog a.more-link:hover, 
 		.widget a:hover,
 		.has-accent-color {
-		    color:' . esc_html( $color_accent ) . ';
+		    color:' . esc_html($color_accent) . ';
 		}
 		
 		.pagination span.current, .pagination span.current:focus, .pagination span.current:hover {
-			border-color:' . esc_html( $color_accent ) . '
+			border-color:' . esc_html($color_accent) . '
 		}
 		
 		button,
@@ -93,7 +97,7 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		.hestia-work .portfolio-item:nth-child(6n+1) .label,
 		.nav-cart .nav-cart-content .widget .buttons .button,
 		.has-background.has-accent-background-color {
-		    background-color: ' . esc_html( $color_accent ) . ';
+		    background-color: ' . esc_html($color_accent) . ';
 		}
 		
 		@media (max-width: 768px) { 
@@ -104,7 +108,7 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 			.navbar .navbar-nav .dropdown .dropdown-menu li a:focus,
 			.navbar button.navbar-toggle:hover,
 			.navbar .navbar-nav li:hover > a i {
-			    color: ' . esc_html( $color_accent ) . ';
+			    color: ' . esc_html($color_accent) . ';
 			}
 		}
 		
@@ -116,13 +120,13 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		.btn.btn-primary,
 		.widget_product_search button[type="submit"],
 		.hestia-sidebar-open.btn.btn-rose,
-		.hestia-sidebar-close.btn.btn-rose {
-		    -webkit-box-shadow: 0 2px 2px 0 ' . hestia_hex_rgba( $color_accent, '0.14' ) . ',0 3px 1px -2px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ',0 1px 5px 0 ' . hestia_hex_rgba( $color_accent, '0.12' ) . ';
-		    box-shadow: 0 2px 2px 0 ' . hestia_hex_rgba( $color_accent, '0.14' ) . ',0 3px 1px -2px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ',0 1px 5px 0 ' . hestia_hex_rgba( $color_accent, '0.12' ) . ';
+		.hestia-sidebar-close.btn.btn-rose{
+		    -webkit-box-shadow: 0 2px 2px 0 ' . hestia_hex_rgba($color_accent, '0.14') . ',0 3px 1px -2px ' . hestia_hex_rgba($color_accent, '0.2') . ',0 1px 5px 0 ' . hestia_hex_rgba($color_accent, '0.12') . ';
+		    box-shadow: 0 2px 2px 0 ' . hestia_hex_rgba($color_accent, '0.14') . ',0 3px 1px -2px ' . hestia_hex_rgba($color_accent, '0.2') . ',0 1px 5px 0 ' . hestia_hex_rgba($color_accent, '0.12') . ';
 		}
 		
 		.card .header-primary, .card .content-primary {
-		    background: ' . esc_html( $color_accent ) . ';
+		    background: ' . esc_html($color_accent) . ';
 		}
 		
 		body:not(.woocommerce-page) .button:not([class^="fl-"]):not(.hestia-scroll-to-top):not(.navbar-toggle):not(.add_to_cart_button):hover,
@@ -142,60 +146,66 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		.hestia-sidebar-open.btn.btn-rose:hover,
 		.hestia-sidebar-close.btn.btn-rose:hover,
 		.pagination span.current:hover{
-			-webkit-box-shadow: 0 14px 26px -12px' . hestia_hex_rgba( $color_accent, '0.42' ) . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ';
-		    box-shadow: 0 14px 26px -12px ' . hestia_hex_rgba( $color_accent, '0.42' ) . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ';
+			-webkit-box-shadow: 0 14px 26px -12px' . hestia_hex_rgba($color_accent, '0.42') . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba($color_accent, '0.2') . ';
+		    box-shadow: 0 14px 26px -12px ' . hestia_hex_rgba($color_accent, '0.42') . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba($color_accent, '0.2') . ';
 			color: #fff;
 		}
 		
 		.form-group.is-focused .form-control {
-		background-image: -webkit-gradient(linear,left top, left bottom,from(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . ')),-webkit-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
-			background-image: -webkit-linear-gradient(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . '),-webkit-linear-gradient(#d2d2d2,#d2d2d2);
-			background-image: linear-gradient(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . '),linear-gradient(#d2d2d2,#d2d2d2);
+		background-image: -webkit-gradient(linear,left top, left bottom,from(' . esc_html($color_accent) . '),to(' . esc_html($color_accent) . ')),-webkit-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
+			background-image: -webkit-linear-gradient(' . esc_html($color_accent) . '),to(' . esc_html($color_accent) . '),-webkit-linear-gradient(#d2d2d2,#d2d2d2);
+			background-image: linear-gradient(' . esc_html($color_accent) . '),to(' . esc_html($color_accent) . '),linear-gradient(#d2d2d2,#d2d2d2);
 		}
 		
 		.navbar:not(.navbar-transparent) li:not(.btn):hover > a,
+		.navbar.navbar-transparent li:not(.btn):hover > a,
 		.navbar li.on-section:not(.btn) > a, 
 		.navbar.full-screen-menu.navbar-transparent li:not(.btn):hover > a,
 		.navbar.full-screen-menu .navbar-toggle:hover,
 		.navbar:not(.navbar-transparent) .nav-cart:hover, 
 		.navbar:not(.navbar-transparent) .hestia-toggle-search:hover {
-				color:' . esc_html( $color_accent ) . '}
+				color:' . esc_html($color_accent) . '}
 		' : '';
 
-		// Header Gradient Color + support for Gutenberg color.
-		$custom_css .= ! empty( $header_gradient ) ? '
+        // Header Gradient Color + support for Gutenberg color.
+        $custom_css .= !empty($header_gradient) ? '
 		.header-filter-gradient { 
-			background: linear-gradient(45deg, ' . hestia_hex_rgba( $header_gradient ) . ' 0%, ' . $this->hestia_generate_gradient_color( $header_gradient ) . ' 100%); 
+			background: linear-gradient(45deg, ' . hestia_hex_rgba($header_gradient) . ' 0%, ' . $this->hestia_generate_gradient_color($header_gradient) . ' 100%); 
 		}
 		.has-header-gradient-color { color: ' . $header_gradient . '; }
 		.has-background.has-header-gradient-background-color { background-color: ' . $header_gradient . '; }
 		 ' : '';
 
-		// Gutenberg support for the background color
-		$background_color = '#' . get_theme_mod( 'background_color', 'E5E5E5' );
+        // Gutenberg support for the background color
+        $background_color = '#' . get_theme_mod('background_color', 'E5E5E5');
 
-		$custom_css .= '
+        $custom_css .= '
 		.has-background-color-color { color: ' . $background_color . '; }
 		.has-background.has-background-color-background-color { background-color: ' . $background_color . '; }
 		';
+        $custom_css .= '
+        .swiper-pagination .swiper-pagination-bullet  { background_color: ' . hestia_hex_rgba($background_color, '0.6') . '; }
+		.swiper-pagination .swiper-pagination-bullet-active { background-color: ' . $background_color . '; }
+		';
 
-		return $custom_css;
-	}
+        return $custom_css;
+    }
 
-	/**
-	 * WooCommerce inline color style.
-	 *
-	 * @return string
-	 */
-	private function woo_colors_inline_style() {
-		if ( ! class_exists( 'woocommerce' ) ) {
-			return '';
-		}
+    /**
+     * WooCommerce inline color style.
+     *
+     * @return string
+     */
+    private function woo_colors_inline_style()
+    {
+        if (!class_exists('woocommerce')) {
+            return '';
+        }
 
-		$color_accent           = get_theme_mod( 'accent_color', apply_filters( 'hestia_accent_color_default', '#e91e63' ) );
-		$custom_css_woocommerce = '';
+        $color_accent = get_theme_mod('accent_color', apply_filters('hestia_accent_color_default', '#e91e63'));
+        $custom_css_woocommerce = '';
 
-		$custom_css_woocommerce .= ! empty( $color_accent ) ? '
+        $custom_css_woocommerce .= !empty($color_accent) ? '
 		.woocommerce-cart .shop_table .actions .coupon .input-text:focus,
 		.woocommerce-checkout #customer_details .input-text:focus, .woocommerce-checkout #customer_details select:focus,
 		.woocommerce-checkout #order_review .input-text:focus,
@@ -204,18 +214,18 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		.woocommerce-checkout .woocommerce-form select:focus,
 		.woocommerce div.product form.cart .variations select:focus,
 		.woocommerce .woocommerce-ordering select:focus {
-			background-image: -webkit-gradient(linear,left top, left bottom,from(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . ')),-webkit-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
-			background-image: -webkit-linear-gradient(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . '),-webkit-linear-gradient(#d2d2d2,#d2d2d2);
-			background-image: linear-gradient(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . '),linear-gradient(#d2d2d2,#d2d2d2);
+			background-image: -webkit-gradient(linear,left top, left bottom,from(' . esc_html($color_accent) . '),to(' . esc_html($color_accent) . ')),-webkit-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
+			background-image: -webkit-linear-gradient(' . esc_html($color_accent) . '),to(' . esc_html($color_accent) . '),-webkit-linear-gradient(#d2d2d2,#d2d2d2);
+			background-image: linear-gradient(' . esc_html($color_accent) . '),to(' . esc_html($color_accent) . '),linear-gradient(#d2d2d2,#d2d2d2);
 		}
 
 		.woocommerce div.product .woocommerce-tabs ul.tabs.wc-tabs li.active a {
-			color:' . esc_html( $color_accent ) . ';
+			color:' . esc_html($color_accent) . ';
 		}
 		
 		.woocommerce div.product .woocommerce-tabs ul.tabs.wc-tabs li.active a,
 		.woocommerce div.product .woocommerce-tabs ul.tabs.wc-tabs li a:hover {
-			border-color:' . esc_html( $color_accent ) . '
+			border-color:' . esc_html($color_accent) . '
 		}
 		
 		.added_to_cart.wc-forward:hover,
@@ -283,7 +293,7 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		div[id^=woocommerce_product_tag_cloud].widget a,
 		div[id^=woocommerce_widget_cart].widget .buttons .button,
 		div.woocommerce table.my_account_orders .button {
-		    background-color: ' . esc_html( $color_accent ) . ';
+		    background-color: ' . esc_html($color_accent) . ';
 		}
 		
 		.added_to_cart.wc-forward,
@@ -305,8 +315,8 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		.woocommerce-button,
 		.woocommerce-Button,
 		div.woocommerce table.my_account_orders .button {
-		    -webkit-box-shadow: 0 2px 2px 0 ' . hestia_hex_rgba( $color_accent, '0.14' ) . ',0 3px 1px -2px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ',0 1px 5px 0 ' . hestia_hex_rgba( $color_accent, '0.12' ) . ';
-		    box-shadow: 0 2px 2px 0 ' . hestia_hex_rgba( $color_accent, '0.14' ) . ',0 3px 1px -2px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ',0 1px 5px 0 ' . hestia_hex_rgba( $color_accent, '0.12' ) . ';
+		    -webkit-box-shadow: 0 2px 2px 0 ' . hestia_hex_rgba($color_accent, '0.14') . ',0 3px 1px -2px ' . hestia_hex_rgba($color_accent, '0.2') . ',0 1px 5px 0 ' . hestia_hex_rgba($color_accent, '0.12') . ';
+		    box-shadow: 0 2px 2px 0 ' . hestia_hex_rgba($color_accent, '0.14') . ',0 3px 1px -2px ' . hestia_hex_rgba($color_accent, '0.2') . ',0 1px 5px 0 ' . hestia_hex_rgba($color_accent, '0.12') . ';
 		}
 		
 		.woocommerce nav.woocommerce-pagination ul li span.current,
@@ -332,49 +342,50 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		.woocommerce-button:hover,
 		.woocommerce-Button:hover,
 		div.woocommerce table.my_account_orders .button:hover {
-			-webkit-box-shadow: 0 14px 26px -12px' . hestia_hex_rgba( $color_accent, '0.42' ) . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ';
-		    box-shadow: 0 14px 26px -12px ' . hestia_hex_rgba( $color_accent, '0.42' ) . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ';
+			-webkit-box-shadow: 0 14px 26px -12px' . hestia_hex_rgba($color_accent, '0.42') . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba($color_accent, '0.2') . ';
+		    box-shadow: 0 14px 26px -12px ' . hestia_hex_rgba($color_accent, '0.42') . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba($color_accent, '0.2') . ';
 			color: #fff;
 		}
 		
 		#secondary div[id^=woocommerce_price_filter] .price_slider .ui-slider-handle,
 		.footer div[id^=woocommerce_price_filter] .price_slider .ui-slider-handle {
-			border-color: ' . esc_html( $color_accent ) . ';
+			border-color: ' . esc_html($color_accent) . ';
 		}
 		' : '';
 
-		return $custom_css_woocommerce;
-	}
+        return $custom_css_woocommerce;
+    }
 
-	/**
-	 * Generate gradient second color based on Header Gradient color
-	 *
-	 * @return string RGBA string.
-	 * @since Hestia 1.1.53
-	 *
-	 * @param string $input the color from which to generate the gradient color.
-	 * @param string $opacity the opacity for the generated color.
-	 */
-	function hestia_generate_gradient_color( $input, $opacity = '' ) {
+    /**
+     * Generate gradient second color based on Header Gradient color
+     *
+     * @return string RGBA string.
+     * @since Hestia 1.1.53
+     *
+     * @param string $input the color from which to generate the gradient color.
+     * @param string $opacity the opacity for the generated color.
+     */
+    function hestia_generate_gradient_color($input, $opacity = '')
+    {
 
-		$rgb = hestia_hex_rgb( $input );
+        $rgb = hestia_hex_rgb($input);
 
-		$rgb[0] = $rgb[0] + 66;
-		$rgb[1] = $rgb[1] + 28;
-		$rgb[2] = $rgb[2] - 21;
+        $rgb[0] = $rgb[0] + 66;
+        $rgb[1] = $rgb[1] + 28;
+        $rgb[2] = $rgb[2] - 21;
 
-		if ( $rgb[0] >= 255 ) {
-			$rgb[0] = 255;
-		}
+        if ($rgb[0] >= 255) {
+            $rgb[0] = 255;
+        }
 
-		if ( $rgb[1] >= 255 ) {
-			$rgb[1] = 255;
-		}
+        if ($rgb[1] >= 255) {
+            $rgb[1] = 255;
+        }
 
-		if ( $rgb[2] <= 0 ) {
-			$rgb[2] = 0;
-		}
+        if ($rgb[2] <= 0) {
+            $rgb[2] = 0;
+        }
 
-		return hestia_rgb_to_rgba( $rgb, $opacity );
-	}
+        return hestia_rgb_to_rgba($rgb, $opacity);
+    }
 }

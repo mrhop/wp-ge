@@ -116,6 +116,12 @@ class Hestia_Font_Selector extends WP_Customize_Control {
 				'Verdana, Geneva, sans-serif',
 				'Paratina Linotype',
 				'Trebuchet MS',
+                'Century Gothic',
+                'Century Gothic Italic',
+                'Montserrat Bold',
+                'Montserrat Light',
+                'Montserrat SemiBold',
+                'Playfair Display Regular'
 			)
 		);
 	}

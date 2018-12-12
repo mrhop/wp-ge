@@ -55,7 +55,7 @@ class Hestia_Footer extends Hestia_Abstract_Main
             return;
         } ?>
 
-        <div class="content">
+        <div class="content container">
             <div class="row">
                 <?php
                 foreach ($sidebars as $footer_sidebar) {
@@ -68,7 +68,6 @@ class Hestia_Footer extends Hestia_Abstract_Main
                 ?>
             </div>
         </div>
-        <hr/>
         <?php
     }
 
@@ -86,7 +85,7 @@ class Hestia_Footer extends Hestia_Abstract_Main
         <footer class="footer <?php echo esc_attr($this->the_footer_class()); ?> footer-big">
             <?php hestia_before_footer_content_trigger(); ?>
             <?php $this->wrapped_bottom_footer_top_content(); ?>
-            <div class="container footer-bottom">
+            <div class="footer-bottom">
                 <?php hestia_before_footer_widgets_trigger(); ?>
                 <?php $this->render_footer_sidebars(); ?>
                 <?php hestia_after_footer_widgets_trigger(); ?>
@@ -169,9 +168,10 @@ class Hestia_Footer extends Hestia_Abstract_Main
      */
     private function wrapped_bottom_footer_content()
     {
-        echo '<div class="hestia-bottom-footer-content">';
+        echo '<div class="hestia-bottom-footer-content">
+            <div class="container">';
         do_action('hestia_do_bottom_footer_content');
-        echo '</div>';
+        echo '</div></div>';
     }
 
     /**

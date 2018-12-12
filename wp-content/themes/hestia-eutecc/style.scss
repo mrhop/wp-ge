@@ -266,7 +266,50 @@ p {
       height: 100%;
       padding-top: 0px;
       .swiper-slide {
-        padding: 60px 60px 40px;
+        div.top {
+          cursor: pointer;
+          img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 0;
+          }
+          div.float-top {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            padding: 50px 20px 20px;
+            top: 40px;
+            background: rgba(52, 169, 211, 0);
+            color: white;
+            opacity: 0;
+            transition: all .4s linear;
+            h5 {
+              color: white;
+            }
+            h6 {
+              font-family: "Playfair Display Regular";
+              font-size: 14px;
+            }
+            a {
+              color: #fff;
+            }
+            .social-link {
+              text-align: center;
+              a {
+                display: inline-block;
+                margin: 20px;
+              }
+            }
+          }
+          &:hover {
+            div.float-top {
+              opacity: 1;
+              top: 0;
+              background: rgba(52, 169, 211, .9);
+            }
+          }
+        }
+        padding: 20px 60px 40px;
         /* Center slide text vertically */
         display: -webkit-box;
         display: -ms-flexbox;
@@ -338,9 +381,10 @@ p {
   color: #fff;
 }
 
-footer.footer {
+footer.footer.footer-black {
   padding-top: 0;
   padding-bottom: 0;
+  background: #222222;
   div.footer-top {
     > div {
       background-position: top center;
@@ -357,9 +401,10 @@ footer.footer {
       }
     }
   }
-  div.container.footer-bottom {
+  div.footer-bottom {
     padding-top: 20px;
     .content {
+      margin: auto;
       .row {
         .col-md-4 {
           @media (max-width: $screen-sm-max) {
@@ -432,6 +477,7 @@ footer.footer {
       margin-bottom: 0;
     }
     .hestia-bottom-footer-content {
+      background: #1c1c1c;
       font-size: 13px;
       p {
         margin-bottom: 0;
@@ -440,9 +486,15 @@ footer.footer {
         font-family: "Montserrat Light";
         font-weight: normal;
         font-size: 12px;
+        padding: 10px 0 10px 15px;
+        @media (max-width: $screen-sm-max) {
+          padding-left: 0;
+          float: left !important;
+          width: auto;
+        }
       }
       .social {
-        padding: 15px 0;
+        padding: 10px 0;
         a {
           margin: 0 10px;
         }

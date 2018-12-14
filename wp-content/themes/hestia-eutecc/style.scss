@@ -12,6 +12,7 @@
 @import "../hestia/style.css";
 
 $icon-font-path: "assets/fonts/" !default;
+$primary-color: #34a9d3;
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
 @font-face {
@@ -76,6 +77,9 @@ p {
   margin-bottom: 70px;
   > .container {
     padding-top: 10px;
+    @media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
+      width: 100%;
+    }
   }
   .navbar-nav {
     > li {
@@ -88,13 +92,38 @@ p {
 }
 
 .navbar.hestia_left {
+  .title-logo-wrapper {
+    min-width: 50px;
+  }
   #main-navigation {
     margin-left: 0;
     .navbar-nav {
       > li {
+        @media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
+          margin-left: 5px;
+          margin-right: 5px;
+        }
         > a {
           font-family: Montserrat;
           font-size: 14px;
+          @media (max-width: $screen-md-max) and (min-width: $screen-md-min) {
+            font-size: 13px;
+            padding: 10px 10px;;
+          }
+          @media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
+            font-size: 12px;
+            padding: 10px 0;
+          }
+        }
+      }
+      li {
+        a {
+          text-transform: uppercase;
+        }
+      }
+      li.current-menu-ancestor, li.current-menu-item {
+        > a {
+          color: $primary-color;
         }
       }
     }
@@ -123,8 +152,26 @@ p {
   margin-top: 70px;
 }
 
-.hestia-about {
+.page-header.header-small {
+  .container {
+    h1.hestia-title, .description {
+    }
+    .description {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.hestia-about, .hestia-east.blog-post {
   padding: 0;
+  .section.section-text {
+    padding: 0;
+    @media (max-width: $screen-sm-min) {
+      padding: 0;
+    }
+  }
   h1, h2, h3, h4, h5 {
     color: #3d3d3d;
   }
@@ -415,6 +462,7 @@ footer.footer.footer-black {
           }
           &:nth-child(2) {
             display: flex;
+            margin-bottom: 20px;
             .widget_nav_menu {
               width: 60%;
               .menu-item {

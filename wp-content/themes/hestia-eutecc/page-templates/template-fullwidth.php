@@ -23,7 +23,7 @@ do_action('hestia_before_single_page_wrapper'); ?>
     }
     ?>
     <div class="blog-post <?php echo esc_attr($class_to_add); ?> hestia-east">
-        <div class="container">
+        <div class="container-fluid">
             <?php
             if (have_posts()) :
                 while (have_posts()) :

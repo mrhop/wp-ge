@@ -148,11 +148,21 @@ p {
   }
 }
 
+div.breadcrumbs {
+  font-family: 'Montserrat Bold';
+  font-size: 13px;
+  color: $primary-color;
+  text-transform: uppercase;
+  padding: 15px 0px;
+}
+
 #carousel-hestia-generic {
   margin-top: 70px;
 }
 
 .page-header.header-small {
+  min-height: 500px;
+  margin-top: 70px;
   .container {
     h1.hestia-title, .description {
     }
@@ -426,6 +436,18 @@ p {
   padding: 50px 0;
   margin: 0 -1000px;
   color: #fff;
+}
+
+.hestia-east.blog-post {
+  div.sectors {
+    margin: 0 -15px;
+    padding: 20px 0 5px;
+    color: #fff;
+    background: #8f9091;
+    h3, h5, p {
+      color: #fff;
+    }
+  }
 }
 
 footer.footer.footer-black {

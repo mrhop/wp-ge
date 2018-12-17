@@ -44,4 +44,12 @@ jQuery(document).ready(function ($) {
             }
         });
     }
+    var ele_strategy_breadcrumb = $('.strategy-container .breadcrumbs > span[property="itemListElement"]:nth-last-child(3)');
+    if (ele_strategy_breadcrumb.length > 0) {
+        ele_strategy_breadcrumb.find('> a').attr('href', document.location.href)
+        var drop_menu = $('#main-navigation ul.dropdown-menu > li > a[href*="strategy"]')
+        if (drop_menu.length > 0) {
+            drop_menu.parents('li.menu-item').addClass('current-menu-ancestor')
+        }
+    }
 });

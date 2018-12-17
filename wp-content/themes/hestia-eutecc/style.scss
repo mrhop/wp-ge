@@ -121,7 +121,7 @@ p {
           text-transform: uppercase;
         }
       }
-      li.current-menu-ancestor, li.current-menu-item {
+      li.current-menu-ancestor,li.current-menu-parent, li.current-menu-item {
         > a {
           color: $primary-color;
         }
@@ -154,6 +154,9 @@ div.breadcrumbs {
   color: $primary-color;
   text-transform: uppercase;
   padding: 15px 0px;
+  span.separator {
+    margin: 0 5px;
+  }
 }
 
 #carousel-hestia-generic {
@@ -446,6 +449,63 @@ div.breadcrumbs {
     background: #8f9091;
     h3, h5, p {
       color: #fff;
+    }
+  }
+  &.strategy-container {
+    .col-md-8 {
+      @media (min-width: $screen-md-min) {
+        padding-left: 50px;
+      }
+    }
+    div.breadcrumbs {
+      > span:last-child, > span:nth-last-child(2) {
+        display: none;
+      }
+    }
+    article {
+      .row {
+        @media (min-width: $screen-md-min) {
+          display: flex;
+        }
+      }
+      .col-md-4 {
+        float: none;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .col-md-8 {
+        position: relative;
+        float: none;
+        @media (min-width: $screen-md-min) {
+          padding-left: 50px;
+        }
+        img.strategy-3-bottom {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+        }
+      }
+      div.strategy-3 {
+        min-height: 750px;
+        ul {
+          padding-left: 0;
+          list-style: none;
+          li {
+            margin-bottom: 20px;
+            img {
+              width: 40px;
+              margin-right: 20px;
+            }
+            font-family: 'Montserrat Bold';
+            color: #3d3d3d;
+          }
+
+        }
+      }
+      img {
+        margin-bottom: 0;
+      }
     }
   }
 }

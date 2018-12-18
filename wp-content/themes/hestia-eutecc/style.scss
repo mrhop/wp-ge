@@ -121,7 +121,7 @@ p {
           text-transform: uppercase;
         }
       }
-      li.current-menu-ancestor,li.current-menu-parent, li.current-menu-item {
+      li.current-menu-ancestor, li.current-menu-parent, li.current-menu-item {
         > a {
           color: $primary-color;
         }
@@ -501,6 +501,14 @@ div.breadcrumbs {
             color: #3d3d3d;
           }
 
+        }
+      }
+      div.strategy-2 {
+        min-height: 950px;
+        h3 {
+          > a:nth-child(2) {
+            float: right;
+          }
         }
       }
       img {

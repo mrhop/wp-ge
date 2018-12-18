@@ -510,6 +510,88 @@ div.breadcrumbs {
             float: right;
           }
         }
+        h5, h6 {
+          font-family: 'Montserrat Bold';
+        }
+      }
+      div.strategy-1 {
+        p:last-child {
+          margin-bottom: 0;
+        }
+        div.col-text {
+          padding-left: 30px;
+          padding-right: 30px;
+          background: #b5b5b5;
+          color: #fff;
+          h5 {
+            font-family: 'Montserrat Bold';
+            text-transform: uppercase;
+            font-size: 14px;
+            color: #fff;
+          }
+          p {
+            color: #fff;
+          }
+        }
+        div.img-wrapper {
+          position: relative;
+          img {
+            width: 100%;
+          }
+          span {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            color: #fff;
+            font-family: 'Montserrat Bold';
+          }
+        }
+        &.strategy-1-top {
+          div.col-text {
+            padding-top: 80px;
+            padding-bottom: 40px;
+          }
+        }
+        &.strategy-1-mid {
+          .col-md-4 {
+            div.col-text {
+              padding-top: 30px;
+              padding-bottom: 20px;
+            }
+          }
+          > .col-text {
+            padding-top: 30px;
+            background: #8f9091;
+            text-align: right;
+          }
+          .col-md-6 {
+            padding-left: 0;
+            padding-right: 0;
+            div.img-wrapper {
+              height: 100%;
+              img {
+                height: 100%;
+              }
+            }
+          }
+        }
+        &.strategy-1-bottom {
+          > .col-text {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            text-align: right;
+          }
+          .col-md-6, .col-md-4 {
+            padding-left: 0;
+            padding-right: 0;
+            div.img-wrapper {
+              height: 100%;
+              img {
+                height: 100%;
+              }
+            }
+          }
+        }
       }
       img {
         margin-bottom: 0;

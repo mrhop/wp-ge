@@ -127,7 +127,7 @@ $east_common_site_id = get_theme_mod('site_id');
         }
     }
     if ($slider_query->have_posts()) {
-        if ($east_common_site_id === 'eutecc' || $east_common_site_id === 'huande'|| $east_common_site_id === 'eusua') {
+        if ($east_common_site_id === 'eutecc' || $east_common_site_id === 'huande'|| $east_common_site_id === 'eusua'||$east_common_site_id === 'solar' ) {
             $top_slider_class = 'container';
         }
         ?>

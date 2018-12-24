@@ -24,8 +24,7 @@ jQuery(document).ready(function ($) {
     });
     if ($(window).width() < 768) {
         new Swiper('.swiper-container.multi', {
-            loop: true,
-            loopFillGroupWithBlank: true,
+
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -33,9 +32,8 @@ jQuery(document).ready(function ($) {
         })
     } else {
         new Swiper('.swiper-container.multi', {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 30,
-            slidesPerGroup: 2,
             loop: true,
             loopFillGroupWithBlank: true,
             pagination: {
@@ -52,4 +50,43 @@ jQuery(document).ready(function ($) {
             drop_menu.parents('li.menu-item').addClass('current-menu-ancestor')
         }
     }
+
+    // clients  slider
+    var swiperClientsContent = new Swiper('.swiper-container.normal-navigate-clients', {
+        initialSlide: 1,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        }
+    });
+    if ($(window).width() < 768) {
+        var swiperClientsPhoto = new Swiper('.swiper-container.multi-clients', {
+            initialSlide: 1,
+            on: {
+                slideChange: function () {
+                    swiperClientsContent.slideTo(this.activeIndex)
+                },
+            },
+        })
+    } else {
+        swiperClientsPhoto = new Swiper('.swiper-container.multi-clients', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            touchRatio: 0,
+            initialSlide: 1,
+            on: {
+                click: function () {
+                    swiperClientsContent.slideTo(this.clickedIndex)
+                },
+            },
+        });
+    }
+    swiperClientsContent.on('slideChange', function () {
+        swiperClientsPhoto.slideTo(this.activeIndex)
+    });
+
 });

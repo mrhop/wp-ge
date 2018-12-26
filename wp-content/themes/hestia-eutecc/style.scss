@@ -263,7 +263,7 @@ div.breadcrumbs {
 
   .sub-features {
     background: #222222;
-    padding: 30px 50px;
+    padding: 40px 50px;
     .col-md-4 {
       padding-left: 60px;
       h5 {
@@ -281,7 +281,11 @@ div.breadcrumbs {
       img {
         margin-left: -50px;
         margin-right: 10px;
-        width: 40px
+        width: 40px;
+        margin-bottom: 0;
+      }
+      p {
+        margin-bottom: 0;
       }
     }
     > p {
@@ -438,6 +442,19 @@ div.breadcrumbs {
         //color: #fff;
         //background: none;
         //font-size: 40px;
+      }
+    }
+  }
+
+  .swiper-container.multi-partners {
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 5px;
+      img {
+        margin-bottom: 0;
+        width: auto;
       }
     }
   }

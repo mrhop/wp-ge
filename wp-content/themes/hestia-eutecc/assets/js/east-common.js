@@ -89,4 +89,9 @@ jQuery(document).ready(function ($) {
         swiperClientsPhoto.slideTo(this.activeIndex)
     });
 
+    var swiperPartners = new Swiper('.swiper-container.multi-partners', {
+        slidesPerView: 6,
+        spaceBetween: 10
+    });
+
 });

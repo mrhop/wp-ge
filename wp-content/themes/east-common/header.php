@@ -25,6 +25,7 @@ $east_common_site_id = get_theme_mod('site_id');
 ?>
 <body <?php body_class(); ?> id="<?php echo $post_slug; ?>">
 <div id="page" class="site">
+    <?php if ($east_common_site_id != 'futurecity'){?>
     <div class="header container-fluid">
         <div class="container top-logo">
             <div class="navbar-header">
@@ -81,8 +82,37 @@ $east_common_site_id = get_theme_mod('site_id');
             </div>
         </nav><!-- #site-navigation -->
     </div><!-- #masthead -->
-    <?php
+    <?php }  else {?>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="header container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="true" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <?php
+            $site_logo = get_theme_mod('site_logo');
+            if (!empty($site_logo)) {
+                ?>
+                <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo $site_logo ?>"></a>
+            <?php } ?>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="true">
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'menu-1',
+                'menu_id' => 'primary-menu',
+            ));
+            ?>
+        </div>
+    </div>
+    </nav>
+    <?php }?>
 
+    <?php
     if ($east_common_site_id === 'eutecc' || $east_common_site_id === 'huande' || $east_common_site_id === 'eusua') {
         if (get_post_type() == 'post') {
             $category = get_the_category();

@@ -161,6 +161,10 @@ function east_common_scripts()
     if (!empty($east_common_site_id)) {
         wp_enqueue_style('east-' . $east_common_site_id . '-style', get_template_directory_uri() . '/assets/css/common-' . $east_common_site_id . '.css');
     }
+    if (strcmp($east_common_site_id, 'futurecity') == 0) {
+        wp_enqueue_style('fancybox', get_template_directory_uri() . '/assets/css/fancybox/jquery.fancybox.css');
+        wp_enqueue_style('perfect-scrollbar', get_template_directory_uri() . '/assets/css/perfect-scrollbar/perfect-scrollbar.min.css');
+    }
 
 
     wp_enqueue_script('east-common-jquery', get_template_directory_uri() . '/assets/js/jquery-2.2.4.min.js', array(), false, true);
@@ -176,6 +180,21 @@ function east_common_scripts()
             wp_enqueue_script('east-common-maphilight', get_template_directory_uri() . '/assets/js/jquery.maphilight.min.js', array(), false, true);
 
         }
+        if (strcmp($east_common_site_id, 'futurecity') == 0) {
+            // when gmp site here
+            wp_enqueue_script('east-common-easing', get_template_directory_uri() . '/assets/js/jquery.easing.min.js', array(), false, true);
+            wp_enqueue_script('east-common-smooth-scroll', get_template_directory_uri() . '/assets/js/jquery.smooth-scroll.min.js', array(), false, true);
+            wp_enqueue_script('east-common-perfect-scrollbar', get_template_directory_uri() . '/assets/js/perfect-scrollbar.jquery.min.js', array(), false, true);
+            wp_enqueue_script('east-common-mixitup', get_template_directory_uri() . '/assets/js/jquery.mixitup.min.js', array(), false, true);
+            wp_enqueue_script('east-common-fancybox', get_template_directory_uri() . '/assets/js/jquery.fancybox.pack.js', array(), false, true);
+            wp_enqueue_script('east-common-TweenMax', get_template_directory_uri() . '/assets/js/TweenMax.min.js', array(), false, true);
+            wp_enqueue_script('east-common-ScrollMagic', get_template_directory_uri() . '/assets/js/ScrollMagic.min.js', array(), false, true);
+            wp_enqueue_script('east-common-animation', get_template_directory_uri() . '/assets/js/animation.gsap.min.js', array(), false, true);
+            wp_enqueue_script('east-common-addIndicators', get_template_directory_uri() . '/assets/js/debug.addIndicators.min.js', array(), false, true);
+            wp_enqueue_script('east-common-utilFun', get_template_directory_uri() . '/assets/js/utilFun.js', array(), false, false);
+
+        }
+
         wp_enqueue_script('east-common-' . $east_common_site_id, get_template_directory_uri() . '/assets/js/common-' . $east_common_site_id . '.js', array(), false, true);
 
     }
